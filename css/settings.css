@@ -1783,7 +1783,7 @@ img.tp-slider-alternative-image {
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
         -moz-opacity: 0;
         -khtml-opacity: 0;
-        opacity: 0;
+        opacity: 0 !important;
     }
 
 .tp-leftarrow {
@@ -1969,6 +1969,7 @@ img.tp-slider-alternative-image {
     background: url(../assets/large_left.png) no-Repeat 0 0;
     width: 40px;
     height: 40px;
+    opacity: .3;
 }
 
 .tp-rightarrow.default {
@@ -1978,6 +1979,7 @@ img.tp-slider-alternative-image {
     background: url(../assets/large_right.png) no-Repeat 0 0;
     width: 40px;
     height: 40px;
+    opacity: .3;
 }
 
 

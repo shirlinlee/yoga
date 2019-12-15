@@ -1082,7 +1082,7 @@
                     $circular = false,
                     $auto_play = false,
                     $scroll_fx = 'scroll',
-                    $duration = 2000,
+                    $duration = 200000,
                     $items_height = 'variable',
                     $auto_pauseOnHover = 'resume',
                     $items_width = '100%',
@@ -1150,7 +1150,7 @@
                         onTouch: true
                     },
                     scroll: {
-                        duration: 600,
+                        duration: 60000,
                         fx: $scroll_fx,
                         timeoutDuration: $duration,
                         easing: $easing,

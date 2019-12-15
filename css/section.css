@@ -158,16 +158,16 @@
 	color: #808080;
 	text-align: left;
 }
-    .welcome-items .box h4:hover {
-        color: #A880A2;
-        text-align: left;
-    }
-    .welcome-items .box p {
-        color: #C7B399;
-    }
-        .welcome-items .box p:hover {
-            color: #808080;
-        }
+.welcome-items .box h4:hover {
+	color: #A880A2;
+	text-align: left;
+}
+.welcome-items .box p {
+	color: #C7B399;
+}
+.welcome-items .box p:hover {
+	color: #808080;
+}
 .section-product-accessories {
 	padding-top: 50px;
 	padding-bottom: 50px;
