@@ -10,7 +10,47 @@ author:		themepunch
 email:     	info@themepunch.com
 website:   	http://www.themepunch.com
 -----------------------------------------------------------------------------*/
+.W100 {
+    width: 100%;
+}
+.W1200 {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.f_gold {
+    color: #c9b39a;
+}
+
+.f_grey {
+    color: #9e9e9e;
+}
+
+.f_purple {
+    color: #a880a2;
+}
+
+.f_white {
+    color: #fff;
+}
+
+.f18 {
+    font-size: 18px;
+}
+
+.f24 {
+    font-size: 24px;
+}
+
+.f40 {
+    font-size: 40px;
+}
+
+.poF {
+    position: fixed;
+}
 
 
 /*************************
