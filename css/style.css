@@ -166,6 +166,7 @@ body {
     text-rendering: optimizelegibility;
     letter-spacing: 0.05px;
     word-wrap: break-word;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 article,
@@ -24556,4 +24557,11 @@ img.grayscale {
                 margin: 0 5px;
                 color: #909090;
             }
+}
+
+
+/* home */
+#revslider .tp-caption{
+    font-size: 32px !important;
+    line-height: 48px !important;
 }
