@@ -285,7 +285,7 @@
                                 </div>
                                 <div class="f14">授課老師</div>
                                 <div class="name f_gold f24">Lilian Chen</div>
-                                <div class="pro f_grey f18">阿斯坦加瑜珈, 皮拉提斯, 能量棒系列</div>
+                                <div class="pro f_grey f16">阿斯坦加瑜珈, 皮拉提斯, 能量棒系列</div>
                             </div>
                             <div class="W50">
                                 <div class="img_wrap">
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="f14">授課老師</div>
                                 <div class="name f_gold f24">Amy Lee</div>
-                                <div class="pro f_grey f18">阿斯坦加瑜珈</div>
+                                <div class="pro f_grey f16">阿斯坦加瑜珈</div>
                             </div>
 
                         </div>
@@ -335,14 +335,19 @@
             </div>
             <script src="/js/libs/zebra_pin.min.js"></script>
             <script>
+                var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
                 $(function() {
-                    if(window.innerWidth <= 599) return;
+                    // if(window.innerWidth <= 599) return;
 
                     new $.Zebra_Pin($('.goToForm'), {
                         contain: true,
                         top_spacing: 70,
                         z_index: 10
                     });
+
+                    $('.goToForm').on('click','.btn', function(){
+                        $body.animate({scrollTop:$('form').offset().top}, 500);
+                    })
                 });
            
             </script>
