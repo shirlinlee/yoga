@@ -336,20 +336,31 @@
             <script src="/js/libs/zebra_pin.min.js"></script>
             <script>
                 var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-                $(function() {
-                    // if(window.innerWidth <= 599) return;
-
-                    new $.Zebra_Pin($('.goToForm'), {
-                        contain: true,
-                        top_spacing: 70,
-                        z_index: 10
-                    });
-
-                    $('.goToForm').on('click','.btn', function(){
+                var isPc = true;
+                
+                $(function() { 
+                    $('.goToForm').on('click','.btn', () => {
                         $body.animate({scrollTop:$('form').offset().top}, 500);
                     })
+                    if(window.innerWidth <= 599) {
+                        $(window).scroll(event => {
+                            var scroll =$(window).scrollTop();
+                            var thresheld = $('form').offset().top - window.innerHeight;
+                            if (scroll >= thresheld) {
+                                $('.goToForm').addClass('Zebra_Pin');
+                            } else {
+                                $('.goToForm').removeClass('Zebra_Pin');
+                            }
+                        });
+                        isPc = false;
+                    } else {
+                        new $.Zebra_Pin($('.goToForm'), {
+                            contain: true,
+                            top_spacing: 70,
+                            z_index: 10
+                        });
+                    }
                 });
-           
             </script>
         </div>
 
