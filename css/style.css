@@ -18617,6 +18617,7 @@ a[data-toggle="tooltip"] {
 
 .footer-widget .textwidget img {
     max-width: 228px;
+    width: 50%;
 }
 
 .footer-widget .copyright {
@@ -23728,8 +23729,18 @@ img.grayscale {
         font-size: 20px;
         color: #FFF;
         font-weight: bold;
-        line-height: 1;
+        line-height: 1.4;
         margin-top: 20px;
+    }
+
+    .row.section-contact-info {
+        margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+        .row.section-contact-info .row>div:last-child {
+            margin-top: 45px;
+        }
     }
 
     .footer-contact-icon .footer-contact-icon-link {
@@ -24669,27 +24680,67 @@ img.grayscale {
             transition: all 0.3s;
         }
 
-            .team-teacher.team-teacher-center_bottom .member-meta span a,
-            .team-teacher.team-teacher-center_top .member-meta span a {
-                width: 30px;
-                height: 30px;
-                display: inline-block;
-                border: 1px solid;
-                font-size: 15px;
-                text-align: center;
-                line-height: 30px;
-                margin: 0 5px;
-                color: #909090;
-            }
+        .team-teacher.team-teacher-center_bottom .member-meta span a,
+        .team-teacher.team-teacher-center_top .member-meta span a {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border: 1px solid;
+            font-size: 15px;
+            text-align: center;
+            line-height: 30px;
+            margin: 0 5px;
+            color: #909090;
+        }
 }
 
 
 /* home */
-#revslider .tp-caption{
-    font-size: 32px !important;
-    line-height: 48px !important;
+
+@media (min-width: 769px) {
+    #revslider .tp-caption{
+        font-size: 32px !important;
+        line-height: 48px !important;
+    }
 }
 
 #revslider .btinput3{
     margin-top: 30px;
+}
+
+@media (max-width: 599px) {
+    h2,
+    .h2 {
+        font-size: 31px;
+    }
+    h4,
+    .h4 {
+        font-size: 18px;
+    }
+    .lead {
+        font-size: 31px;
+
+    }
+    .index-p {
+        font-size: 18px;
+    }
+    .footer-contact-icon .footer-contact-icon-text {
+        font-size: 18px;
+    }
+    .column.col-md-12 {
+        width: 100%;
+    }
+    .section-contact-info .column.col-md-3.col-sm-4 {
+        width: 50%;
+        float: left;
+        height: 120px;
+        
+    }
+    .section-contact-info .column.col-md-3.col-sm-4:nth-child(n+3) {
+        margin-top: 30px;
+    }
+    #revslider .btinput3 {
+        margin-top: 10px;
+    }
+
 }

@@ -472,8 +472,8 @@ tr:hover .delete {
 }
 
 .btinput3 {
-  border: 1px solid #c2c2c2;
-  color: #c2c2c2;
+  border: 1px solid #9E9E9E;
+  color: #9E9E9E;
   min-width: 200px;
   padding: 0 40px;
   line-height: 48px;
@@ -643,3 +643,17 @@ tr:hover .delete {
 }
 
 /*<!-- -->*/
+
+@media (max-width: 599px) {
+  .text-yago {
+    font-size: 18px;
+  }
+  .yaimg .row .text-left{
+    text-align: center;
+  }
+  .btinput3 {
+    padding: 0 30px;
+    line-height: 48px;
+    font-size: 17px !important;
+}
+}

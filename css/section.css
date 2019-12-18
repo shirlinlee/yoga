@@ -147,6 +147,14 @@
 	padding-top: 50px;
 	padding-bottom: 30px;
 }
+
+@media (max-width: 599px) {
+	.section-welcome {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
 .welcome-items .box {
 	padding-top:15px;
 	padding-bottom:15px;
