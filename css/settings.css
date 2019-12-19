@@ -13,6 +13,12 @@ website:   	http://www.themepunch.com
 .W100 {
     width: 100%;
 }
+
+.W50 {
+    width: 50%;
+    display: inline-block;
+}
+
 .W1200 {
     max-width: 1200px;
     width: 100%;
@@ -36,8 +42,12 @@ website:   	http://www.themepunch.com
     color: #fff;
 }
 
+.f14 {
+    font-size: 14px;
+}
+
 .f18 {
-    font-size: 18px;
+    font-size: 18px !important;
 }
 
 .f24 {
@@ -52,6 +62,50 @@ website:   	http://www.themepunch.com
     position: fixed;
 }
 
+.tr {
+    margin-bottom: 20px;
+}
+
+.tr .th{
+    width: 120px;
+    display: inline-block;
+}
+
+.tr .td{
+    width: calc(100% - 140px);
+    display: inline-block;
+}
+
+.t_center {
+    text-align: center;
+}
+
+@media (max-width: 599px) {
+    .f14 {
+        font-size: 14px;
+    }
+    
+    .f18 {
+        font-size: 16px !important;
+    }
+    
+    .f24 {
+        font-size: 20px;
+    }
+    
+    .f40 {
+        font-size: 22px;
+    }
+    .tr .th{
+        width: 100px;
+        display: inline-block;
+    }
+    
+    .tr .td{
+        width: calc(100% - 105px);
+        display: inline-block;
+    }
+}
 
 /*************************
 	-	CAPTIONS	-
