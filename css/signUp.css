@@ -68,7 +68,10 @@
   -o-transform: scale(.9);
 } */
 .main_img {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .goToForm font {
@@ -118,6 +121,11 @@ h4.f40 {
 .time {
   background-image: url(../images/time.png);
 }
+
+.price {
+  background-image: url(../images/price.png);
+}
+
 .tag_wrap {
   margin-top: 40px;
 }

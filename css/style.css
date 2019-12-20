@@ -13150,13 +13150,13 @@ a[data-toggle="tooltip"] {
 
 @media (max-width: 1199px) {
     .dhslider .slider-caption .slider-caption-text {
-        font-size: 1em;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 767px) {
     .dhslider .slider-caption .slider-caption-text {
-        font-size: 0.8em;
+        font-size: 17px;
         margin-bottom: 10px;
     }
 }
@@ -24711,21 +24711,21 @@ img.grayscale {
 @media (max-width: 599px) {
     h2,
     .h2 {
-        font-size: 31px;
+        font-size: 27px;
     }
     h4,
     .h4 {
-        font-size: 18px;
+        font-size: 17px;
     }
     .lead {
-        font-size: 31px;
+        font-size: 27px;
 
     }
     .index-p {
-        font-size: 18px;
+        font-size: 17px;
     }
     .footer-contact-icon .footer-contact-icon-text {
-        font-size: 18px;
+        font-size: 17px;
     }
     .column.col-md-12 {
         width: 100%;
@@ -24741,6 +24741,9 @@ img.grayscale {
     }
     #revslider .btinput3 {
         margin-top: 10px;
+    }
+    .footer-widget .textwidget img {
+        max-width: 180px;
     }
 
 }

@@ -26,6 +26,13 @@ website:   	http://www.themepunch.com
     margin-right: auto;
 }
 
+.W1000 {
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .f_gold {
     color: #c9b39a;
 }
@@ -84,6 +91,41 @@ website:   	http://www.themepunch.com
     text-align: center;
 }
 
+.pc{
+    display: inline-block;
+}
+
+.mb{
+    display: none;
+}
+
+.pb20 {
+    padding-bottom: 20px;
+}
+
+.subTitle {
+    color: #c9b39a;
+    line-height: 25px;
+    font-size: 23px;
+    padding-bottom: 10px;
+}
+
+.subTitle:before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 25px;
+    background-color: #c9b39a;
+    float: left;
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    
+
+}
+
 @media (max-width: 599px) {
     .f14 {
         font-size: 14px;
@@ -107,6 +149,13 @@ website:   	http://www.themepunch.com
     
     .tr .td{
         width: calc(100% - 105px);
+        display: inline-block;
+    }
+    .pc{
+        display: none;
+    }
+    
+    .mb{
         display: inline-block;
     }
 }
