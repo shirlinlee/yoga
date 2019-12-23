@@ -45,6 +45,8 @@
   background-color: rgba(168, 128, 162, 0.9);
   color: #fff;
   margin-bottom: 10px;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .pin-wrapper {
@@ -99,6 +101,11 @@ h4.f40 {
   padding-right: 20px;
   margin-top: 0;
 }
+
+h4.f40.t_left {
+  width: 100%;
+} 
+
 .info {
   margin: 10px 0 20px;
 }
@@ -265,8 +272,9 @@ button.btn {
 
   .goToForm .btn {
     float: left;
-    padding: 12px 18px;
+    padding: 12px 0;
     font-size: 18px;
+    width: 105px;
   }
   .mb_break {
     display: inline-block;

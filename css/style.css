@@ -3936,6 +3936,9 @@ object {
 @media (min-width: 1200px) {
     .container {
         width: 1200px;
+        padding-left: 0;
+        padding-right: 0;
+
     }
 }
 
@@ -5471,8 +5474,8 @@ select[multiple].input-lg {
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    padding: 0.7714285714285714rem 1.2rem;
-    font-size: 14px;
+    padding: 10px 40px;
+    font-size: 18px;
     line-height: 1.1;
     -webkit-transition: background-color 0.3s,border-color 0.3s,color 0.3s;
     -o-transition: background-color 0.3s,border-color 0.3s,color 0.3s;
@@ -9212,7 +9215,7 @@ input[type="button"].btn-block {
 
 
 .navbar-default .navbar-nav > li.hidden-xs > a {
-    padding: 0 3px;
+    padding: 0 0 0 6px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -13119,7 +13122,7 @@ a[data-toggle="tooltip"] {
 }
 
 .dhslider .slider-caption .slider-heading-text {
-    color: #5a5a5a;
+    /* color: #5a5a5a; */
     font-size: 28px;
     margin: 0;
     font-weight: bold;
@@ -18616,7 +18619,7 @@ a[data-toggle="tooltip"] {
 }
 
 .footer-widget .textwidget img {
-    max-width: 228px;
+    max-width: 200px;
     width: 50%;
 }
 
@@ -22346,14 +22349,14 @@ p.comment-form-url {
 }
 
 .social-widget-wrap a img {
-    width: 42px;
+    width: 38px;
     display: inline-block;
-    opacity: .2;
+    opacity: .8;
     transition: all .3s;
 }
 
 .social-widget-wrap a img:hover {
-    opacity: .3;
+    opacity: 1;
 }
 
 .recent-tweets ul {
@@ -23737,6 +23740,24 @@ img.grayscale {
         margin-top: 80px;
     }
 
+    .icon_wrap {
+        position: relative;
+        width: 100%;
+        height: 40px;
+    }
+
+    .icon_wrap img{
+        position: absolute;
+        top: 50%;
+        height: 35px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+
     @media (max-width: 768px) {
         .row.section-contact-info .row>div:last-child {
             margin-top: 45px;
@@ -23846,10 +23867,10 @@ img.grayscale {
     .footer-contact-icon1:hover .footer-contact-icon1-text {
         opacity: 0.7;
         filter: alpha(opacity=70);
-        -webkit-transform: translate(0, 15px);
-        -ms-transform: translate(0, 15px);
-        -o-transform: translate(0, 15px);
-        transform: translate(0, 15px);
+        -webkit-transform: translate(0, 10px);
+        -ms-transform: translate(0, 10px);
+        -o-transform: translate(0, 10px);
+        transform: translate(0, 10px);
     }
 
 
@@ -24744,7 +24765,15 @@ img.grayscale {
         margin-top: 10px;
     }
     .footer-widget .textwidget img {
-        max-width: 180px;
+        max-width: 110px;
     }
-
+    .dhslider {
+        height: 100vh !important;
+    }
+    .carousel.fade .carousel-inner .item {
+        height: 100vh !important;
+    }
+    .icon_wrap img{
+        height: 25px;
+    }
 }
