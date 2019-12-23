@@ -60,7 +60,7 @@ Theme Name: Yolia HTML
  */
 
 
-@font-face {
+ @font-face {
     font-family: 'Noto Sans TC', sans-serif;
     src: url('../fonts/flaticon.eot');
     src: url('../fonts/flaticon.eot#iefix') format('embedded-opentype'), url('../fonts/flaticon.woff') format('woff'), url('../fonts/flaticon.ttf') format('truetype'), url('../fonts/flaticon.svg') format('svg');
@@ -20769,6 +20769,14 @@ a.go-to-top:hover a.go-to-top:focus {
     background: #ffffff;
 }
 
+.hentry *{
+    transition: all .3s;
+}
+
+.hentry .btn {
+    border-radius: 25px;
+}
+
 .no-boder-hentry .hentry {
     padding-bottom: 0;
     margin-bottom: 0;
@@ -24232,23 +24240,17 @@ img.grayscale {
         border: 1px solid #d7d7d7;
     }
 
-        .class-list:hover, .class-list:focus, .class-list:active {
-            border: 2px solid #A880A2;
-            color: #000;
-            background: rgba(255, 255, 255, 0.8);
-        }
-
     .class-line {
         margin: 5px;
     }
 
     .class-mask {
         position: absolute;
-        border: 0px solid #A880A2;
+        border: inset 2px #A880A2;
         top: 0;
         left: 0px;
-        width: 360px;
-        height: 520px;
+        width: 100%;
+        height: 100%;
         background: rgba(255, 255, 255, 0.8);
         color: #ffffff;
         opacity: 0;
