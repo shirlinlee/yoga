@@ -91,6 +91,10 @@ website:   	http://www.themepunch.com
     text-align: center;
 }
 
+.t_left {
+    text-align: left;
+}
+
 .pc{
     display: inline-block;
 }

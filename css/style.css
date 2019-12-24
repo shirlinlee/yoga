@@ -5471,8 +5471,8 @@ select[multiple].input-lg {
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    padding: 0.7714285714285714rem 1.2rem;
-    font-size: 14px;
+    padding: 10px 40px;
+    font-size: 18px;
     line-height: 1.1;
     -webkit-transition: background-color 0.3s,border-color 0.3s,color 0.3s;
     -o-transition: background-color 0.3s,border-color 0.3s,color 0.3s;
@@ -13119,7 +13119,7 @@ a[data-toggle="tooltip"] {
 }
 
 .dhslider .slider-caption .slider-heading-text {
-    color: #5a5a5a;
+    /* color: #5a5a5a; */
     font-size: 28px;
     margin: 0;
     font-weight: bold;
@@ -18616,7 +18616,7 @@ a[data-toggle="tooltip"] {
 }
 
 .footer-widget .textwidget img {
-    max-width: 228px;
+    max-width: 200px;
     width: 50%;
 }
 
@@ -22346,14 +22346,14 @@ p.comment-form-url {
 }
 
 .social-widget-wrap a img {
-    width: 42px;
+    width: 38px;
     display: inline-block;
-    opacity: .2;
+    opacity: .8;
     transition: all .3s;
 }
 
 .social-widget-wrap a img:hover {
-    opacity: .3;
+    opacity: 1;
 }
 
 .recent-tweets ul {
@@ -24743,7 +24743,12 @@ img.grayscale {
         margin-top: 10px;
     }
     .footer-widget .textwidget img {
-        max-width: 180px;
+        max-width: 110px;
     }
-
+    .dhslider {
+        height: 100vh !important;
+    }
+    .carousel.fade .carousel-inner .item {
+        height: 100vh !important;
+    }
 }
