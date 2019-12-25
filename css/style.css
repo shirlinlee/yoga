@@ -3936,6 +3936,9 @@ object {
 @media (min-width: 1200px) {
     .container {
         width: 1200px;
+        padding-left: 0;
+        padding-right: 0;
+
     }
 }
 
@@ -9212,7 +9215,7 @@ input[type="button"].btn-block {
 
 
 .navbar-default .navbar-nav > li.hidden-xs > a {
-    padding: 0 3px;
+    padding: 0 0 0 6px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -23737,6 +23740,24 @@ img.grayscale {
         margin-top: 80px;
     }
 
+    .icon_wrap {
+        position: relative;
+        width: 100%;
+        height: 40px;
+    }
+
+    .icon_wrap img{
+        position: absolute;
+        top: 50%;
+        height: 35px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+
     @media (max-width: 768px) {
         .row.section-contact-info .row>div:last-child {
             margin-top: 45px;
@@ -23846,10 +23867,10 @@ img.grayscale {
     .footer-contact-icon1:hover .footer-contact-icon1-text {
         opacity: 0.7;
         filter: alpha(opacity=70);
-        -webkit-transform: translate(0, 15px);
-        -ms-transform: translate(0, 15px);
-        -o-transform: translate(0, 15px);
-        transform: translate(0, 15px);
+        -webkit-transform: translate(0, 10px);
+        -ms-transform: translate(0, 10px);
+        -o-transform: translate(0, 10px);
+        transform: translate(0, 10px);
     }
 
 
@@ -24750,5 +24771,8 @@ img.grayscale {
     }
     .carousel.fade .carousel-inner .item {
         height: 100vh !important;
+    }
+    .icon_wrap img{
+        height: 25px;
     }
 }
