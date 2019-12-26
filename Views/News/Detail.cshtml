@@ -1,0 +1,184 @@
+﻿@model Models.news_data
+@{
+    string controller = ViewContext.RouteData.Values["controller"].ToString();
+    string action = ViewContext.RouteData.Values["action"].ToString();
+
+    var Recent = (List<Models.news_data>)ViewData["Recent"];
+
+    //NW.BC = new Dictionary<string, string>() { { Model.Group.title, Url.Action("List", "News") }, { Model.title, "" } };
+}
+
+
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="content-container no-padding " style="margin-top:60px;" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 main-wrap">
+                <div class="main-content">
+                    <article class="hentry single-post">
+                        <div class="hentry-wrap">
+
+                            <div class="date-badge">
+                                <span class="month-year">@(NW.getDate(Model.start_date, "yyyy"))</span>
+                                <span class="date">@(NW.getDate(Model.start_date, "MM/dd"))</span>
+                            </div>
+                            <div class="entry-header">
+                                <h1 class="entry-title">@(Model.title)</h1>
+
+                            </div>
+                            <div class="entry-content">
+
+
+                                @*<p>
+                                    <img class="aligncenter" src="@(Model.img[0])" width="800" height="373" />
+                                </p>
+                                <p>&nbsp;</p>*@
+                                <p style="font-weight:normal">
+                                    @Html.Raw(Model.cont)
+                                </p>
+                            </div>
+                            <div class="entry-footer">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="entry-tags"  >
+
+                                            @if (!string.IsNullOrWhiteSpace(Model.tags))
+                                            {
+                                                var Tags = Model.tags.Split(',');
+                                                foreach (var item in Tags)
+                                                {
+                                                    <a href="@(Url.Action("List", "News", new { kw = item }))">@(item)</a>
+                                                }
+                                            }
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-sm-6">
+
+
+                                        <div class="share-links">
+                                            <div class="share-icons" style="text-align:right">
+
+                                                <div class="fb-like" style="margin-right:0.8214285714285714em" data-href="@(MVC.FB.url)" data-width="" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+
+
+                                                <span class="facebook-share">
+
+                                                    <a id="fb_share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@(MVC.FB.url)&amp;src=sdkpreparse" title="Share on Facebook">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </a>
+
+                                                </span>
+
+                                                @*<span class="instagram-share">
+                                                        <a href="https://www.instagram.com/yoga.edition/?hl=zh-tw" target="_blank" title="Share on Instagram">
+                                                            <i class="fa fa-instagram"></i>
+                                                        </a>
+                                                    </span>*@
+
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <nav class="post-navigation">
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                @{
+                                    var Previous = (Dictionary<string, string>)TempData["Previous"];
+                                }
+                                @if (Previous != null)
+                                {
+                                    foreach (var item in Previous)
+                                    {
+                                        <div class="prev-post">
+                                            <span>Previous article </span>
+                                            <a href="@(item.Key)" rel="prev">@(item.Value)</a>
+                                        </div>
+                                    }
+                                }
+
+                            </div>
+                            <div class="col-sm-6">
+
+                                @{
+                                    var Next = (Dictionary<string, string>)TempData["Next"];
+                                }
+
+                                @if (Next != null)
+                                {
+                                    foreach (var item in Next)
+                                    {
+                                        <div class="next-post">
+                                            <span>Next article </span>
+                                            <a href="@(item.Key)" rel="next">@(item.Value)</a>
+                                        </div>
+                                    }
+                                }
+
+
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+            <aside class="col-md-3 sidebar-wrap">
+                <div class="main-sidebar">
+
+                    <div class="widget widget-post-thumbnail">
+                        <h4 class="widget-title">
+                            <span>最近貼文</span>
+                        </h4>
+                        <ul class="posts-thumbnail-list">
+
+                            @if (Recent != null)
+                            {
+                                foreach (var item in Recent)
+                                {
+                                    <li>
+                                        <div class="posts-thumbnail-image">
+                                            <a href="#">
+                                                <img width="60" height="50" src="@(item.img[0])" />
+                                            </a>
+                                        </div>
+                                        <div class="posts-thumbnail-content">
+                                            <time datetime="@(NW.getDate(item.start_date))">@(NW.getDate(item.start_date))</time>
+
+                                            <h4>
+                                                <a href="@(item.URL)">@(item.title)</a>
+                                            </h4>
+                                        </div>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,191 @@
+﻿@model Models.contact_data
+@{
+    var Sys = (Models.sys_data)ViewData["Sys"];
+    var Service = (Models.sys_data)ViewData["Service"];
+}
+
+<style>
+    .footer-contact-icon1-text {
+        line-height: 80px;
+    }
+</style>
+
+<div class="content-container no-padding">
+    <div class="container-full">
+        <div class="row">
+            <div class="col-md-12 main-wrap">
+                <div class="main-content">
+
+
+                    <div class="row section-contact-info" style="padding-top:initial;padding-bottom:20px">
+                        <div class="column col-md-12">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="column col-md-12">
+                                        <h2 class="text-center">即刻加入，免費體驗!</h2>
+                                        <div class="text-block text-center">
+                                                <br />
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="column col-md-3 col-sm-3 ">
+                                        <div class="raw-html">
+                                            <div class="footer-contact-icon1">
+                                                <a href="mailto:@(Sys.mail)">
+                                                    @*<i class="fa fa-list-alt"></i>*@
+                                                    <div style="height:40px">
+                                                        <img src="~/images/icon/icon-1.png" style="width:40px" />
+                                                    </div>
+                                                    @*<span class="footer-contact-icon1-link">Yoga Edition 瑜珈館</span>*@
+                                                    <span class="footer-contact-icon1-text">選擇你的興趣課程或師資</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-md-3 col-sm-3">
+                                        <div class="raw-html">
+                                            <div class="footer-contact-icon1">
+                                                <a href="#">
+                                                    @*<i class="fa fa-file-text"></i>*@
+                                                    <div style="height:40px">
+                                                        <img src="~/images/icon/icon-2.png" style="width:40px" />
+                                                    </div>
+
+                                                    @*<span class="footer-contact-icon1-link">Yoga Edition 瑜珈館</span>*@
+                                                    <span class="footer-contact-icon1-text">填寫你的聯絡資料</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-md-3 col-sm-3">
+                                        <div class="raw-html">
+                                            <div class="footer-contact-icon1">
+                                                <a href="#">
+                                                    @*<i class="fa fa-user"></i>*@
+                                                    <div style="height:40px">
+                                                        <img src="~/images/icon/icon-3.png" style="width:40px" />
+                                                    </div>
+
+                                                    @*<span class="footer-contact-icon1-link">Yoga Edition 瑜珈館</span>*@
+                                                    <span class="footer-contact-icon1-text">專屬人員服務</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-md-3 col-sm-3">
+                                        <div class="raw-html">
+                                            <div class="footer-contact-icon1">
+                                                <a href="javascript:void(0)">
+                                                    @*<i class="fa fa-xing"></i>*@
+                                                    <div style="height:40px">
+                                                        <img src="~/images/icon/icon-4.png" style="width:40px" />
+                                                    </div>
+                                                    @*<span class="footer-contact-icon1-link">Yoga Edition 瑜珈館</span>*@
+                                                    <span class="footer-contact-icon1-text">展開你的瑜珈旅程</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row section-contact ">
+                        <div class="column col-md-12">
+
+                            <div class="container">
+                                <div class="row">
+                                    <form method="post">
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="column col-md-7 col-sm-7">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>
+
+                                                        <span class="form-control-wrap">
+
+                                                            @Html.SelectList("course_id", Model.L_Course, new Dictionary<string, object>() { { "required", "required" } })
+
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p>
+
+                                                        <span class="form-control-wrap">
+                                                            <input type="text" name="title" class="form-control" placeholder="請輸入姓名" required />
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p>
+
+                                                        <span class="form-control-wrap">
+                                                            <input type="text" name="tel" size="40" class="form-control" placeholder="請輸入電話" required />
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p>
+
+                                                        <span class="form-control-wrap">
+                                                            <input type="email" name="mail" size="40" class="form-control" placeholder="請輸入信箱" required />
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p>
+
+                                                        <span class="form-control-wrap">
+
+                                                            @Html.SelectList("time_id", Model.L_Time, new Dictionary<string, object>() { { "required", "required" } })
+
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="column col-md-5 col-sm-5">
+                                            <div class="text-block">
+                                                <p><strong>服務協議</strong></p>
+                                                <p>@(Html.Raw(Service.cont))</p>
+                                                <p>
+                                                    <strong>
+                                                        <input type="radio" required name="ra" value="0" />
+                                                        我同意服務協議
+                                                    </strong>
+                                                </p>
+                                                <p></p>
+                                                @*<p><strong>Email: </strong></p>
+                                                    <p><a href="mailTo:@(Sys.mail)">@(Sys.mail)</a></p>
+                                                    <p><strong>Phone: </strong></p>
+                                                    <p>@(Sys.tel)</p>*@
+                                            </div>
+                                            <div class="col-md-12" style="top:25px">
+                                                <p class=" col-md-5 text-center">
+                                                    <input type="submit" value="送出" class="form-control submit" />
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

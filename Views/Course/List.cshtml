@@ -1,0 +1,271 @@
+﻿@{
+    string controller = ViewContext.RouteData.Values["controller"].ToString();
+    string action = ViewContext.RouteData.Values["action"].ToString();
+
+    var Author = (List<ListItem>)ViewData["Author"];
+    var Group = (List<ListItem>)ViewData["Group"];
+    var Place = (List<ListItem>)ViewData["Place"];
+}
+<div class="content-container no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 main-wrap">
+                <div class="main-content">
+                    <div class="portfolio portfolio-style-one masonry gap" data-paginate="no" data-layout="masonry" data-masonry-column="3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="column col-md-12">
+                                    <p class="class-p">課程內容</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column col-md-8"></div>
+                                <div class="column col-md-4">
+                                    <form>
+                                        <input name="kw" type="search" class="class-search" style="width:100%" placeholder="搜尋課程" autocomplete="off" value="@(ViewBag.kw)" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p>
+
+                                            <span class="form-control-wrap">
+                                                @Html.SelectList("pid", Place, new Dictionary<string, object>() { { "data-click", "pid" } })
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>
+
+                                            <span class="form-control-wrap">
+                                                @Html.SelectList("gid", Group, new Dictionary<string, object>() { { "data-click", "gid" } })
+                                            </span>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <p>
+
+                                            <span class="form-control-wrap">
+                                                @Html.SelectList("aid", Author, new Dictionary<string, object>() { { "data-click", "aid" } })
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="empty-space-40"></div>
+
+                        <div class="container">
+                            <div class="posts">
+                                <div class="posts-wrap posts-layout-grid">
+
+                                    <div id="loadPage" class="row"></div>
+
+                                    <div id="template" style="display:none;">
+                                        <article class="col-md-4 col-sm-6 hentry">
+                                            <div class="class-wrap class-list  hidden-xs">
+
+                                                <div class="entry-info class-line">
+                                                    <div class="entry-header">
+                                                        <h2 class="class-title">
+                                                            <a href="{url}">{title2}<br />{title}</a>
+                                                        </h2>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="entry-featured class-line ">
+                                                    <a href="{url}">
+                                                        <img src="{img}" />
+                                                    </a>
+                                                    <div id="P1">{a_title}</div>
+                                                    <div id="P2">{mins} mins</div>
+                                                    <div id="P3"> <img src="~/images/services/leve{level_id}.png" /></div>
+
+                                                </div>
+
+                                                <div class="class-mask">
+                                                    <p class="class-caption-text">
+                                                        {info}
+                                                    </p>
+                                                    <div class="class-fix text-right">
+                                                        <button data-toggle="modal" data-target="#modal_55bf64e4d2b43" class="btn btn-default btn-danger btn-style-solid btn-style-round">
+                                                            立即體驗
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!--phone-->
+                                            <div class="hentry-wrap news-list hidden-sm hidden-md hidden-lg">
+                                                <div class="entry-info class-line">
+                                                    <div class="entry-header">
+                                                        <h3 class="class-title-pc">
+                                                            <a href="{url}">{title2} - {title}</a>
+                                                        </h3>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="entry-featured news-line ">
+                                                    <a href="{url}">
+                                                        <img width="500" height="300" src="{img}" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="entry-info news-line">
+                                                    <div class="entry-header">
+                                                        <p class="class-caption-text">
+                                                            {info}
+                                                        </p>
+                                                        <hr />
+                                                        <div class="entry-meta">
+
+                                                            <button data-toggle="modal" data-target="#modal_55bf64e4d2b43" class="btn btn-default btn-danger btn-style-solid btn-style-round">
+                                                                立即體驗
+                                                            </button>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="modal fade" id="modal_55bf64e4d2b43" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-center class-modal-body">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="row login-class">
+
+                                            <div class="col-md-6 login-class-right">
+                                                <h2 class="text-center">LOGIN</h2>
+                                                <div class="login-p">
+                                                    即刻登入 <br />展開你的瑜珈旅程!
+                                                </div>
+                                                <p class="form-row  text-center">
+                                                    <a class="button1" target="_blank" href="https://www.trueclassbooking.com.tw/member/login.aspx">前往登入</a>
+                                                </p>
+                                            </div>
+
+                                            <div class="col-md-6 login-class-right">
+                                                <h2 class="text-center">JOIN US</h2>
+                                                <div class="login-p">
+                                                    還不是會員嗎? <br />立即預約免費體驗!
+                                                </div>
+                                                <p class="form-row  text-center">
+                                                    <a class="button1" href="@(Url.Action("Contact", "Home"))">預約體驗</a>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var page = 0;
+    var kw = '@(ViewBag.kw)';
+    var gid = '@(ViewBag.gid)';
+    var aid = '@(ViewBag.aid)';
+    var pid = '@(ViewBag.pid)';
+
+    $('input[name="kw"]').keyup(function ()
+    {
+        kw = $(this).val();
+
+        page = 0;
+        $('#loadPage').html('');
+        LoadNext();
+
+    })
+
+    $('select[data-click]').on('change', function () {
+
+        var id = $(this).val();
+        var click = $(this).attr('data-click');
+
+        switch (click) {
+            case 'gid': gid = id; break;
+            case 'aid': aid = id; break;
+            case 'pid': pid = id; break;
+            default: return false;
+        }
+
+        page = 0;
+        $('#loadPage').html('');
+        LoadNext();
+
+        //$('a[data-name=' + name + ']').removeClass("active");
+        //$(this).addClass('active');
+
+    })
+
+
+    $(function () {
+        LoadNext();
+    })
+
+    $(window).scroll(function () {
+        var h = $(document).height() - $(window).scrollTop() - $(window).height();
+        if (h < 300) { LoadNext(); }
+    });
+
+
+
+
+    function LoadNext() {
+        page++;
+
+        $.post('@(Url.Action(action, controller))', { page: page, kw : kw, gid : gid, pid : pid, aid : aid }, function (result) {
+
+            var temp = $('#template').html();
+
+            var num = result.num;
+            if (num > 0) {
+
+                var data = result.data;
+                for (var item in data) {
+
+                    var html = temp;
+
+                    //html = html.replace(/{url}/g, data[item].URL);
+                    html = html.replace(/{title}/g, data[item].title);
+                    html = html.replace(/{title2}/g, data[item].title2);
+                    html = html.replace(/{mins}/g, data[item].mins);
+                    html = html.replace(/{info}/g, data[item].info);
+                    html = html.replace(/{level_id}/g, data[item].level_id);
+
+                    html = html.replace(/{info}/g, data[item].info);
+                    html = html.replace(/{a_title}/g, data[item].Author.title);
+
+                    html = html.replace(/{img}/g, data[item].img[0]);
+
+                    $('#loadPage').append(html);
+                }
+            }
+
+        })
+    }
+
+</script>

@@ -1,0 +1,97 @@
+﻿@model Models.author_data
+@{
+    var Related = (List<Models.author_data>)ViewData["Related"];
+}
+
+<div class="content-container no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 main-wrap">
+                <div class="main-content">
+                    <article class="portfolio type-portfolio">
+                        <div class="portfolio-wrap">
+                            <div class="portfolio-title-wrap">
+
+                                <h1 class="entry-title portfolio-title">
+                                    @(Model.title)
+                                    @(Model.info)
+                                </h1>
+
+                            </div>
+                            <div class="portfolio-summary">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="portfolio-featured">
+                                            <a href="@(Model.img[0])" data-rel="magnific-single-popup">
+                                                <img width="700" height="350" src="@(Model.img[0])">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="portfolio-meta">
+
+                                            <div class="portfolio-excerpt">
+                                                @(Html.Raw(Model.cont))
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="related-portfolio">
+    <div class="container">
+        <div class="related-portfolio-title">
+            <h3><span>師資團隊</span></h3>
+        </div>
+        <div class="portfolio portfolio-style-one">
+            <div class="portfolio-wrap portfolio-layout-grid row">
+
+
+                @if (Related != null)
+                {
+                    foreach (var item in Related)
+                    {
+                        <div class="portfolio-item related-post-item col-md-3 col-sm-6" data-accent-color="#912da3">
+                            <div class="portfolio-item-wrap">
+                                <div class="portfolio-featured-wrap">
+                                    <div class="portfolio-featured video-featured">
+                                        <div id="video-1" class="embed-wrap mfp-hide">
+                                            <img alt="Vimeo" src="@(item.img[0])" />
+                                        </div>
+                                        <div class="video-poster">
+                                            <img alt="Vimeo" src="@(item.img[0])" />
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-action">
+                                        <a class="zoom-action" href="@(item.URL)">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+
+                                    </div>
+                                    <div class="portfolio-overlay"></div>
+                                </div>
+                                <div class="portfolio-caption">
+                                    <div class="portfolio-caption-wrap">
+                                        <h2 class="portfolio-title">
+                                            <a href="@(item.URL)">@(item.title)</a>
+                                        </h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

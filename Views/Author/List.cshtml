@@ -1,0 +1,138 @@
+﻿@{
+                /**/
+
+                string controller = ViewContext.RouteData.Values["controller"].ToString();
+                string action = ViewContext.RouteData.Values["action"].ToString();
+}
+
+<style>
+    .hidd {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+</style>
+
+<div class="content-container no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 main-wrap">
+                <div class="main-content">
+
+                    <div class="row">
+                        <div class="column col-md-12">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="column col-md-12">
+                                        <p class="class-p">專業師資團隊</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column col-md-8"></div>
+                                    <div class="column col-md-4">
+                                        <form>
+                                            <input name="kw" type="search" class="class-search" placeholder="搜尋師資" autocomplete="off" style="width:100%" value="@(ViewBag.kw)" />
+                                            @*<input type="submit" class="hidden" name="submit" value="Search" />*@
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+
+                                <div id="loadPage" class="row team-members"></div>
+
+                                <div id="template" style="display:none;">
+                                    <div class="column col-md-3 col-sm-3">
+                                        <div class="team-teacher team-teacher-center_bottom">
+                                            <div class="member-avatar" style="overflow:initial;">
+                                                <a href="{url}">
+                                                    <img src="{img}" width="370" height="410" />
+                                                </a>
+                                            </div>
+                                            <div class="member-info">
+                                                <div class="member-info-wrap">
+                                                    <div class="member-name">
+                                                        <a href="{url}">
+                                                            <h4>{title}</h4>
+                                                        </a>
+                                                    </div>
+                                                    <div class="member-job hidd">{tags}</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var page = 0;
+    var kw = '@(ViewBag.kw)';
+
+    $('input[name="kw"]').keyup(function ()
+    {
+        kw = $(this).val();
+
+        page = 0;
+        $('#loadPage').html('');
+        LoadNext();
+
+    })
+
+
+    $(function () {
+        LoadNext();
+    })
+
+    $(window).scroll(function () {
+        var h = $(document).height() - $(window).scrollTop() - $(window).height();
+        if (h < 300) { LoadNext(); }
+    });
+
+
+
+
+    function LoadNext() {
+        page++;
+
+        $.post('@(Url.Action(action, controller))', { page: page, kw : kw }, function (result) {
+
+            var temp = $('#template').html();
+
+            var num = result.num;
+            if (num > 0) {
+
+                var data = result.data;
+                for (var item in data) {
+
+
+
+                    var html = temp;
+
+                    html = html.replace(/{url}/g, data[item].URL);
+                    html = html.replace(/{title}/g, data[item].title);
+                    html = html.replace(/{img}/g, data[item].img[0]);
+                    html = html.replace(/{tags}/g, data[item].tags);
+
+                    $('#loadPage').append(html);
+                }
+            }
+
+        })
+    }
+
+</script>

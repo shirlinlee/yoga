@@ -5327,6 +5327,15 @@ output {
     color: #6e6e6e;
 }
 
+.section-contact {
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image:url(/images/services/free02.png);
+    height:1000px;
+    padding-top:20px
+}
+
 .form-control {
     display: block;
     width: 100%;

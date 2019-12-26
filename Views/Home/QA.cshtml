@@ -1,0 +1,72 @@
+﻿@model List<Models.sys_function_data>
+
+<div class="content-container no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 main-wrap">
+                <div class="main-content">
+
+                    <div class="column col-md-12 col-sm-12">
+                        <div class="accordion">
+                            <h3 class="el-heading class-p">Yoga Edition  FQA</h3>
+
+                            <div class="text-block">
+
+                                <p>
+                                    如果您對於會館的服務、設施或課程安排…等有任何的建議或指教，歡迎您與會館的營運部經理(Operations Manager)或會員服務專員(Member Service Officer)反映，亦可將您的建議或指教mail至 HOCSD@trueyoga.com.tw，我們將竭誠為您服務。
+                                </p>
+
+                            </div>
+
+                            <div id="accordion-4" class="panel-group">
+
+                                @if (Model != null)
+                                {
+                                    var ids = Model.Select(m => m.id).ToArray();
+
+
+
+                                    foreach (var item in Model)
+                                    {
+                                        var i = Array.IndexOf(ids, item.id);
+
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading panel-icon-square-right">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-4" href="#accordion-4-@(item.id)">
+                                                        @(item.title)
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="accordion-4-@(item.id)" class="panel-collapse collapse @(i == 0 ? "in" : "")">
+                                                <div class="panel-body">
+                                                    <div class="text-block">
+                                                        <p>
+                                                            @if (item.Sub != null)
+                                                            {
+                                                                foreach (var item2 in item.Sub)
+                                                                {
+                                                                    <h4>@(item2.title)</h4>
+                                                                    @Html.Raw(item2.cont)
+                                                                    <hr />
+                                                                }
+                                                            }
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
