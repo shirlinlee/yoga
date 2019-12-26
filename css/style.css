@@ -480,7 +480,7 @@ hr {
     margin-top: 1.6428571428571428em;
     margin-bottom: 1.6428571428571428em;
     border: 0;
-    border-top: 1px solid #a1a1a1;
+    border-top: 1px solid #d1d1d1;
 }
 
 .sr-only {
@@ -4226,8 +4226,8 @@ object {
     }
 
     .main-wrap {
-        float: left;
-        width: 66.66666666666666%;
+        float: none;
+        width: 100%;
     }
 
     .col-md-12.main-wrap {
@@ -19023,7 +19023,7 @@ a.go-to-top:hover a.go-to-top:focus {
         display: block;
         width: 100%;
         text-align: left;
-        padding-bottom: 1em;
+        padding-bottom: 10px;
     }
 
         .portfolio .portfolio-filter .filter-action.filter-action-center > ul {
@@ -19040,6 +19040,8 @@ a.go-to-top:hover a.go-to-top:focus {
                 -webkit-border-radius: 2.5em;
                 border-radius: 2.5em;
                 display: inline-block !important;
+                margin-bottom: 10px;
+                margin-right: 5px;
             }
 
                 .portfolio .portfolio-filter .filter-action.filter-action-center > ul li a {
@@ -20781,6 +20783,10 @@ a.go-to-top:hover a.go-to-top:focus {
     padding-bottom: 0;
     margin-bottom: 0;
     border: none;
+}
+
+.entry-info h3.class-title-pc {
+    padding: 0 20px;
 }
 
 @media (min-width: 480px) {
@@ -24194,6 +24200,52 @@ img.grayscale {
     margin: 5px;
 }
 
+.class-mask {
+    position: absolute;
+    border: solid 2px #A880A2;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.class-fix.text-right {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    margin: 0;
+}
+
+.class-caption-text {
+    margin-top: 70px;
+    background: rgba(218, 218, 218, 0.6);
+    height: calc(100% - 70px);
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    color: #5a5a5a;
+    margin-top: 70px;
+    text-align: left;
+    padding: 30px 20px;
+}
+
+@media (max-width: 767px) {
+    .class-caption-text {
+        margin-top: 20px;
+        padding: 15px 20px;
+    }
+    .hentry .btn {
+        width: 100%;
+        background-color: #c8b39a;
+        color: #fff;
+    }
+}
+
+
 @media (min-width: 480px) {
     .news-list:hover, .news-list:focus, .news-list:active {
         border: 2px solid #A880A2;
@@ -24242,18 +24294,6 @@ img.grayscale {
 
     .class-line {
         margin: 5px;
-    }
-
-    .class-mask {
-        position: absolute;
-        border: inset 2px #A880A2;
-        top: 0;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.8);
-        color: #ffffff;
-        opacity: 0;
     }
 
     .class-wrap {
@@ -24321,22 +24361,6 @@ img.grayscale {
     .class-mask:hover {
         opacity: 1;
         z-index: 99;
-    }
-
-    .class-caption-text {
-        font-size: 14px;
-        font-family: 'Noto Sans TC', sans-serif;
-        font-weight: 700;
-        color: #5a5a5a;
-        margin-top: 100px;
-        text-align: center;
-    }
-
-
-    .class-fix {
-        margin-top: 30px;
-        margin-right: 20px;
-        position: relative;
     }
 
     #P1 {
