@@ -134,9 +134,13 @@
                     if (scrollTop > "1") {
                         $('#ig_icon').attr('src', '/images/ig_black.png');
                         $('#fb_icon').attr('src', '/images/fb_black.png');
+                        $('#youtube_icon').attr('src', '/images/youtube_black.png');
+
                     } else {
                         $('#ig_icon').attr('src', '/images/ig-icon.png');
                         $('#fb_icon').attr('src', '/images/fb-icon.png');
+                        $('#youtube_icon').attr('src', '/images/youtube-icon.png');
+
                     }
 
 

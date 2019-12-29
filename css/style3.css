@@ -5,14 +5,25 @@
     background-size: cover !important;
 }*/
 
+.primary-nav > li > a :hover {
+  color: #c8b39a;
+}
+
+.active {
+  opacity: 0.4;
+}
+
+.primary-nav .dropdown-menu a {
+  color: #fff;
+}
+
 @media (max-width: 768px) {
-    /*.bgb {
+  /*.bgb {
         height: 100%;
         background-repeat: no-repeat;
         background-size: contain !important;
     }*/
-
-    .social-widget-wrap {
-        text-align: center
-    }
+  .social-widget-wrap {
+    text-align: center;
+  }
 }

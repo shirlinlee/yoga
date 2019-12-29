@@ -9577,7 +9577,7 @@ input[type="button"].btn-block {
 
 .primary-nav .dropdown-menu {
     min-width: 200px;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgb(200, 179, 154);
 }
 
     .primary-nav .dropdown-menu li {
@@ -9618,7 +9618,7 @@ input[type="button"].btn-block {
 }
 
 .primary-nav .dropdown-menu a:hover {
-    color: #C7B399;
+    color: rgba(255,255,255, .4);
     /*background: transparent; */
 }
 
@@ -9871,6 +9871,7 @@ input[type="button"].btn-block {
         .navbar-fixed-top .navbar-nav.primary-nav > .active > a,
         .navbar-fixed-top .navbar-nav.primary-nav > .open > a {
             color: #C7B399;
+            opacity: 1;
         }
 
             .navbar-fixed-top .navbar-nav.primary-nav > .active > a:hover,
@@ -12152,6 +12153,7 @@ button.close {
         -ms-transform: scale(1);
         -o-transform: scale(1);
         transform: scale(1);
+        min-height: 300px;
     }
 
 .modal-open .modal {
@@ -12165,25 +12167,19 @@ button.close {
     margin: 0.7142857142857143em;
 }
 
-    .modal-dialog.modal-dialog-center {
-        left: 50%;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-    }
+.modal-dialog.modal-dialog-center {
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+}
 
-        .modal-dialog.modal-dialog-center .modal-body {
-            overflow-y: auto;
-        }
+.modal-dialog.modal-dialog-center .modal-body {
+    overflow-y: auto;
+}
 
-        .modal-dialog.modal-dialog-center .modal-footer {
-            margin-top: 0;
-        }
-
-@media (max-width: 767px) {
-    .modal-dialog.modal-dialog-center {
-        width: 100%;
-    }
+.modal-dialog.modal-dialog-center .modal-footer {
+    margin-top: 0;
 }
 
 .modal-content {
@@ -12270,6 +12266,12 @@ button.close {
 .user-login-modal .modal-body {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+
+.modal-dialog {
+    width: 92%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -12367,10 +12369,6 @@ button.close {
     }
 
 @media (min-width: 768px) {
-    .modal-dialog {
-        width: 600px;
-        margin: 2.142857142857143em auto;
-    }
 
     .modal-content {
         -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -17896,8 +17894,8 @@ a[data-toggle="tooltip"] {
     }
 
     .header-transparent .navbar-default:not(.navbar-fixed-top) {
-        background: rgba(0, 0, 0, 0.1);
-        border-color: rgba(255, 255, 255, 0.23);
+        background: #C8B39A;
+        border-color: #C8B39A;
         border-width: 0 0 0px 0;
     }
 
@@ -23887,16 +23885,6 @@ img.grayscale {
         visibility: visible;
     }
 
-    .footer-contact-icon1:hover .footer-contact-icon1-text {
-        opacity: 0.7;
-        filter: alpha(opacity=70);
-        -webkit-transform: translate(0, 10px);
-        -ms-transform: translate(0, 10px);
-        -o-transform: translate(0, 10px);
-        transform: translate(0, 10px);
-    }
-
-
 @media (min-width: 992px) {
     .primary-nav .bg_1 > .dropdown-menu {
         background: url('../images/menu-bg-1.jpg') no-repeat right top #fff;
@@ -24079,12 +24067,15 @@ img.grayscale {
 }
 
 .login-p {
-    font-size: 20px;
     color: #6e6e6e;
     text-align: center;
-    font-weight: 600;
     font-family: 'Noto Sans TC', sans-serif;
-    margin-bottom: 30px;
+    line-height: 1.4;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translate(0, -50%);
+    padding: 0 20px;
 }
 
 .login-form {
@@ -24135,7 +24126,7 @@ img.grayscale {
     padding: 0.7714285714285714rem 1.2rem;
     font-size: 16px;
     line-height: 1.8;
-    width: 30%;
+    width: 45%;
     -webkit-transition: background-color 0.3s,border-color 0.3s,color 0.3s;
     -o-transition: background-color 0.3s,border-color 0.3s,color 0.3s;
     transition: background-color 0.3s,border-color 0.3s,color 0.3s;
@@ -24149,6 +24140,10 @@ img.grayscale {
     color: #ffffff;
     background-color: #C8B39A;
     border-color: #C8B39A;
+}
+
+.button1:hover {
+    color: #fff;
 }
 
 .class-search {
@@ -24252,6 +24247,54 @@ img.grayscale {
         background-color: #c8b39a;
         color: #fff;
     }
+}
+
+.login-class {
+    border: 3px solid #C8B39A;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    padding: 25px 0;
+}
+.login-class input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #c8b39a;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.login-class-right {
+    border-right: 1px solid #C8B39A;
+    margin: auto;
+    height: 70%;
+}
+
+.login-class-right:last-child {
+    border: none;
+}
+
+.login-wrap {
+    position: relative;
+    width: 100%;
+    height: 320px;
+}
+
+.login-class-p {
+    color: #6e6e6e;
+    text-align: center;
+}
+.login-class .btn{
+    color: #fff;
+    background-color: #9e9e9e;
+    color: #5a5a5a;
+    border-radius: 20px;
+    line-height: 40px;
+    padding: 0 25px;
+}
+
+.login-class h2 {
+    margin: 0 0 10px;
 }
 
 
@@ -24403,32 +24446,7 @@ img.grayscale {
         z-index: 3;
     }
 
-    .login-class {
-        border: 5px solid #C8B39A;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        margin: auto;
-        text-align: center;
-        width: 100%;
-        padding: 5px;
-    }
 
-    .login-class-right {
-        border-right: 3px solid #C8B39A;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        margin: auto;
-        height: 70%;
-    }
-
-    .login-class-p {
-        font-size: 20px;
-        color: #6e6e6e;
-        text-align: center;
-        font-weight: 600;
-        font-family: 'Noto Sans TC', sans-serif;
-        margin-top: 20%;
-    }
 
     .class-button1 {
         display: inline-block;
@@ -24457,10 +24475,6 @@ img.grayscale {
         color: #ffffff;
         background-color: #C8B39A;
         border-color: #C8B39A;
-    }
-
-    .class-modal-body {
-        width: 60%;
     }
 
     @media (max-width: 767px) {
@@ -24810,5 +24824,17 @@ img.grayscale {
     }
     .icon_wrap img{
         height: 25px;
+    }
+    .login-wrap {
+        height: initial;
+    }
+    .login-p {
+        position: relative;
+        top: 0;
+        transform: translate(0, 0);
+    }
+    .login-class-right:last-child {
+        margin-top: 40px;
+
     }
 }

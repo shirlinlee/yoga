@@ -103,8 +103,20 @@ website:   	http://www.themepunch.com
     display: none;
 }
 
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
 .pb20 {
     padding-bottom: 20px;
+}
+
+.pb30 {
+    padding-bottom: 30px;
 }
 
 .subTitle {
