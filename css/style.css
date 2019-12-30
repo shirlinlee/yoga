@@ -24764,14 +24764,43 @@ img.grayscale {
             color: #909090;
         }
 }
+.tag_wrap {
+    margin-top: 40px;
+  }
 
+.tag_wrap span {
+    background-color: #c8b39a;
+    border: 1px solid;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0 15px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+  }
 
+  .tag_wrap span a{
+    color: #fff;
+  }
 /* home */
 
 @media (min-width: 769px) {
     #revslider .tp-caption{
         font-size: 32px !important;
         line-height: 48px !important;
+    }
+    .tag_wrap span:hover {
+        background-color: #b59e83;
     }
 }
 
