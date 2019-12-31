@@ -1,0 +1,168 @@
+﻿@model Models.web_function_sub
+@{
+    var T = (List<Models.author_data>)ViewData["T"]; //瑜珈老師
+    var Contact = (Models.contact_data)ViewData["Contact"];
+
+    var WEB = NW.WEB_URL + Url.Action("Detail", "Activity", new { id = Model.id });
+}
+<link rel='stylesheet' href='/css/signUp.css' type='text/css' media='all' />
+<div class="content-container no-padding">
+    <div class="container-full register W1000">
+        <img src="/images/signUp/40X18.png" style="background-image: url(@(Model.files[0]));" class="main_img W100" alt="">
+        <div class="activity_wrap">
+            <div class="content">
+                <h4 class="f40 f_gold">@(Model.title)</h4>
+
+                <div class="info f18">
+                    @(Html.Raw(Model.info))
+                </div>
+                <div class="des f18 W100">
+                    <h6 class="subTitle">課程介紹</h6>
+                    @(Html.Raw(Model.cont))
+                    <p class="tag_wrap f_white f14">
+                        @{ var Tag = (Model.tag ?? "").Split(','); }
+                        @if (Tag != null)
+                        {
+                            foreach (var item in Tag)
+                            {
+                                <span>#@(item)</span>
+                            }
+                        }
+                    </p>
+                </div>
+                <div class="teacher W100">
+                    <h6 class="subTitle">師資介紹</h6>
+                    @if (T != null)
+                    {
+                        foreach (var item in T)
+                        {
+                            <div class="W50">
+                                <a href="@(item.URL)">
+                                    <div class="img_wrap">
+                                        <img src="@(item.img[0])" alt="">
+                                    </div>
+                                    <div class="f14">授課老師</div>
+                                    <div class="name f_gold f24">@(item.title)</div>
+                                    <div class="pro f_grey f16">@(item.XX)</div>
+                                </a>
+                                
+                            </div>
+                        }
+                    }
+
+                </div>
+
+            </div>
+            <div class="goToForm f_grey f24 t_center">
+
+                @if (Model.isJoin)
+                {
+                    <p class="f24 btn">立即報名</p>
+                }
+                else
+                {
+                    <p class="f24">報名截止</p>
+                }
+
+                    <div class="mb_break">
+
+                        @if (Model.group_id == 59)
+                        {
+                            <p class="f14">目前人數: @(ViewBag.C)人</p>
+
+                            if (Model.max > 0)
+                            {
+                                <p class="f14">人數上限: @(Model.max)人</p>
+                            }
+
+
+                        }
+
+                        <div class="social_wrap">
+
+                            <div id="fb-root"></div>
+                            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v5.0"></script>
+
+                            <div class="fb-like" data-href="@(WEB)" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+                            @*<div class="like"><img src="/images/like.jpg" alt=""></div>
+            <div class="share"><img src="/images/share.jpg" alt=""></div>*@
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        @if (Model.isJoin)
+        {
+
+            <form method="post" action="@(Url.Action("Save"))" class="W100 f18 t_center">
+                <input name="group_id" value="@(Model.id)" hidden="hidden" />
+
+                <h4 class="f40 f_gold t_left W100">課程報名</h4>
+                <div class="tr">
+                    <div class="th t_left">姓名</div>
+                    <div class="td">
+                        <input type="text" name="title" placeholder="請填寫您的真實姓名" class="form-control f18" required>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th t_left">E-mail</div>
+                    <div class="td"><input type="email" name="mail" placeholder="請填寫您的信箱" class="form-control f18" required></div>
+                </div>
+                <div class="tr">
+                    <div class="th t_left">行動電話</div>
+                    <div class="td"><input type="text" name="tel" placeholder="請填寫您的手機" class="form-control f18" required></div>
+                </div>
+
+                <div class="tr">
+                    <div class="th t_left">會員編號</div>
+                    <div class="td"><input type="text" name="info" class="form-control f18" placeholder="請填寫您的會員標號"></div>
+                </div>
+
+                @if (Model.group_id == 58)
+                {
+                    <div class="tr">
+                        <div class="th t_left">聯繫時間</div>
+                        <div class="td">
+                            @Html.SelectList("time_id", Contact.L_Time, new Dictionary<string, object>() { { "required", "required" } })
+                        </div>
+                    </div>
+                }
+
+                <button type="submit" class="btn">送出</button>
+            </form>
+        }
+
+
+
+    </div>
+    <script src="/js/libs/zebra_pin.min.js"></script>
+    <script>
+        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+        var isPc = true;
+
+        $(function () {
+            $('.goToForm').on('click', '.btn', () => {
+                $body.animate({ scrollTop: $('form').offset().top }, 500);
+            })
+            if (window.innerWidth <= 599) {
+                $(window).scroll(event => {
+                    var scroll = $(window).scrollTop();
+                    var thresheld = $('form').offset().top - window.innerHeight;
+                    if (scroll >= thresheld) {
+                        $('.goToForm').addClass('Zebra_Pin');
+                    } else {
+                        $('.goToForm').removeClass('Zebra_Pin');
+                    }
+                });
+                isPc = false;
+            } else {
+                new $.Zebra_Pin($('.goToForm'), {
+                    contain: true,
+                    top_spacing: 70,
+                    z_index: 10
+                });
+            }
+        });</script>
+</div>

@@ -1,0 +1,196 @@
+﻿@{
+    string controller = ViewContext.RouteData.Values["controller"].ToString();
+    string action = ViewContext.RouteData.Values["action"].ToString();
+
+    var G = (List<ListItem>)ViewData["G"];
+}
+
+<style>
+    .posts .entry-title {
+        font-size: 1.5em;
+    }
+</style>
+
+<div class="content-container no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 main-wrap">
+                <div class="main-content">
+                    <div class="portfolio portfolio-style-one masonry gap" data-paginate="no" data-layout="masonry" data-masonry-column="3">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="column col-md-12">
+                                    <p class="class-p">私人課程</p>
+                                </div>
+
+                            </div>
+                            
+                            <div class="row portfolio-filter">
+                                <div class="column col-md-8">
+                                        <div class="filter-action filter-action-center no-sorting">
+                                            <ul data-filter-key="filter">
+
+                                                @if (G != null)
+                                                {
+                                                    foreach (var item in G)
+                                                    {
+                                                        <li>
+                                                            <a href="javascript:void(0);" data-id="@(item.Value)" data-click="gid">@(item.DisplayText)</a>
+                                                        </li>
+                                                    }
+                                                }
+
+                                            </ul>
+                                        </div>
+                                </div>
+                                <div class="column col-md-4">
+                                     <form>
+                                          <input name="kw" type="search" class="class-search" style="width:100%" placeholder="Search" autocomplete="off" value="@(ViewBag.kw)" />
+                                            @*<input type="submit" class="hidden" name="submit" value="Search" />*@
+                                     </form>
+                                 </div>
+                            </div>
+                          
+                        </div>
+
+
+                        <div class="container">
+
+                            @*<div class="posts" style="padding-left:20px;">*@
+                            <div class="posts">
+                                <div class="posts-wrap posts-layout-grid">
+
+
+
+                                    <div class="row" id="loadPage">
+
+
+                                    </div>
+
+                                    <div id="template" style="display:none;">
+
+                                        <article class="col-md-4 col-sm-6 hentry">
+                                            <div class="hentry-wrap news-list">
+                                                <div class="entry-featured news-line ">
+                                                    <a href="{url}">
+                                                        <img width="500" height="300" src="{img}" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="entry-info news-line">
+                                                    <div class="entry-header">
+                                                        <h2 class="entry-title">
+                                                            <a href="{url}">{title}</a>
+                                                        </h2>
+                                                        <hr />
+                                                        <div class="entry-meta">
+
+                                                            <span class="meta-date">
+                                                                <time datetime="{date}"><i class="fa fa-clock-o"></i>{date}</time>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var page = 0;
+    var gid = '@(ViewBag.gid)';
+    var kw = '@(ViewBag.kw)';
+
+    $('a[data-click]').on('click', function () {
+
+        var id = $(this).attr('data-id');
+        var click = $(this).attr('data-click');
+
+
+        switch (click) { case 'gid': gid = id; break; default: return false; }
+
+        page = 0;
+        $('#loadPage').html('');
+        LoadNext();
+
+        //$('a[data-name=' + name + ']').removeClass("active");
+        //$(this).addClass('active');
+
+    })
+
+    $('input[name="kw"]').keyup(function ()
+    {
+        kw = $(this).val();
+
+        page = 0;
+        $('#loadPage').html('');
+        LoadNext();
+
+    })
+
+
+    $(function () {
+
+
+        if (gid) {
+            $('[data-id=' + gid + ']').addClass('selected');
+        }
+
+        LoadNext();
+    })
+
+    $(window).scroll(function () {
+        var h = $(document).height() - $(window).scrollTop() - $(window).height();
+        if (h < 300) { LoadNext(); }
+    });
+
+
+
+
+    function LoadNext() {
+        page++;
+
+        $.post('@(Url.Action(action, controller))', { page: page, id: gid, kw : kw }, function (result) {
+
+            var temp = $('#template').html();
+
+            var num = result.num;
+            if (num > 0) {
+
+                var data = result.data;
+                for (var item in data) {
+
+
+
+                    var html = temp;
+
+                    html = html.replace(/{url}/g, data[item].URL);
+                    html = html.replace(/{title}/g, data[item].title);
+                    html = html.replace(/{img}/g, data[item].img);
+                    html = html.replace(/{date}/g, data[item].DATE);
+
+                    $('#loadPage').append(html);
+                }
+            }
+
+        })
+    }
+
+</script>

@@ -17902,16 +17902,19 @@ a[data-toggle="tooltip"] {
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a,
-        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a:hover,
-        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a:hover,
-        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a:hover,
-        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a:focus,
-        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a:focus,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a:focus,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a > .navicon,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a > .navicon,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a > .navicon {
             color: #fff;
+        }
+
+        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a:hover,
+        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a:hover,
+        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a:hover,
+        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a:focus,
+        .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a:focus {
+            opacity: .5;
         }
 
             .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a > .underline:before,
