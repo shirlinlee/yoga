@@ -472,7 +472,7 @@ tr:hover .delete {
 }
 
 .btinput3 {
-  border: 1px solid #9e9e9e;
+  border: 1px solid #9e9e9e !important;
   color: #9e9e9e;
   min-width: 200px;
   padding: 0 40px;
