@@ -3521,6 +3521,8 @@ img.tp-slider-alternative-image {
 
 
 .tp-caption img {
+    min-width: 60px;
+    height: auto !important;
     background: transparent;
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);

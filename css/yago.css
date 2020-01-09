@@ -77,6 +77,54 @@
   right: 20px;
 }
 
+#index_revslider {
+  text-align: center;
+  position: relative;
+}
+
+#index_revslider h2 {
+  display: block;
+  margin-top: 10px;
+}
+
+#index_revslider a {
+  margin-top: 20px;
+}
+
+#index_revslider div{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+
+button.slick-arrow {
+  width: 40px;
+  height: 40px;
+  text-indent: -99999px;
+  -webkit-appearance: none;
+  border: none;
+  background-color: rgba(0,0,0,.1);
+  border-radius: 50%;
+  top: 50%;
+  position: absolute;
+  z-index: 400;
+}
+
+button.slick-next{
+  right: 50px;
+}
+
+button.slick-prev{
+  left: 50px;
+}
+
+@media (min-width: 769px) {
+  button.slick-arrow:hover {
+      opacity: .3;
+  }
+}
+
 @media (min-width: 480px) {
   .section-background-bottom1 {
     background: #d7d7d7;

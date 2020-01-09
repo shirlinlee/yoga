@@ -16,6 +16,7 @@
     <title>Yoga Edition 瑜珈館</title>
     <link rel="shortcut icon" href="/Content/images/sys/2019110101322596518.png">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css' type='text/css' media='all' />
     <link rel='stylesheet' href='/css/settings.css' type='text/css' media='all' />
     <link rel='stylesheet' href='/css/font-awesome.min.css' type='text/css' media='all' />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Muli' type='text/css' media='all' />
@@ -41,17 +42,6 @@
 </head>
 
 <body data-spy="scroll">
-
-    <div id="preloader">
-        <img class="preloader__logo" src="/Content/images/sys/logo.png" alt="" />
-        <div class="preloader__progress">
-            <svg width="60px" height="60px" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <path class="preloader__progress-circlebg" fill="none" stroke="#dddddd" stroke-width="4" stroke-linecap="round" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
-                <path id='preloader__progress-circle' fill="none" stroke="#C7B399" stroke-width="4" stroke-linecap="round" stroke-dashoffset="192.61" stroke-dasharray="192.61 192.61" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
-            </svg>
-        </div>
-    </div>
-
 
 
     <div id="wrapper" class="wide-wrap">
@@ -289,132 +279,31 @@
 
                     <!--siler-->
                     <div class="row">
-                        <div id="revslider">
-
-                            <ul>
-                                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="off" data-title="Intro">
-
-                                            <div class="aaa zzzzzz tp-caption " style="background-image:url(/images/2019121000531431231.png)"
-                                                 data-speed="800"
-                                                 data-easing="Power3.easeInOut">
-                                            </div>
-
-                                                    <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0"
-                                                         style="width:100%;text-align:center;color:#666666;font-weight:200; margin-bottom: 20px"
-                                                         data-y="200"
-                                                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                         data-speed="800"
-                                                         data-start="1800"
-                                                         data-easing="Power3.easeInOut"
-                                                         data-splitin="none"
-                                                         data-splitout="none"
-                                                         data-elementdelay="0.1"
-                                                         data-endelementdelay="0.1">
-                                                        敦南頂級瑜珈會館
-
-
-                                                    </div>
-                                                    <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0"
-                                                         style="width:100%;text-align:center;color:#666666;font-weight:200; margin-bottom: 20px"
-                                                         data-y="260"
-                                                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                         data-speed="800"
-                                                         data-start="1800"
-                                                         
-                                                         data-easing="Power3.easeInOut"
-                                                         data-splitin="none"
-                                                         data-splitout="none"
-                                                         data-elementdelay="0.1"
-                                                         data-endelementdelay="0.1">
-                                                        透過瑜珈，帶您體驗最美好的當下
-
-                                                    </div>
-
-                                            <div class="tp-caption blackmontserrat40  tp-resizeme rs-parallaxlevel-0"
-                                                 style="width:100%; text-align:center;font-weight:normal;font-weight:300;"
-                                                 data-y="350"
-                                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                 data-speed="3000"
-                                                 data-start="2200"
-                                                 
-                                                 data-easing="Back.easeOut"
-                                                 data-splitin="none"
-                                                 data-splitout="none"
-                                                 data-elementdelay="0.1"
-                                                 data-endelementdelay="0.1">
-                                                <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round" >
-                                                    立即體驗
-                                                </a>
-                                            </div>
-
-
-
-                                        </li>
-                                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="off" data-title="Intro">
-
-                                            <div class="aaa zzzzzz tp-caption " style="background-image:url(/images/2019121000531431231.png)"
-                                                 data-speed="800"
-                                                 data-easing="Power3.easeInOut">
-                                            </div>
-                                
-
-                                                    <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0"
-                                                         style="width:100%;text-align:center;color:#666666;font-weight:200; margin-bottom: 20px"
-                                                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                         data-speed="800"
-                                                         data-start="1800"
-                                                         data-easing="Power3.easeInOut"
-                                                         data-splitin="none"
-                                                         data-splitout="none"
-                                                         data-elementdelay="0.1"
-                                                         data-endelementdelay="0.1">
-                                                        透過瑜珈喚醒療癒自己
-
-
-                                                    </div>
-                                                    <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0"
-                                                         style="width:100%;text-align:center;color:#666666;font-weight:200; margin-bottom: 20px"
-                                                         data-y="380"
-                                                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                         data-speed="800"
-                                                         data-start="1800"
-                                                         
-                                                         data-easing="Power3.easeInOut"
-                                                         data-splitin="none"
-                                                         data-splitout="none"
-                                                         data-elementdelay="0.1"
-                                                         data-endelementdelay="0.1">
-                                                        享受與身體對話的快樂
-
-                                                    </div>
-
-                                            <div class="tp-caption blackmontserrat40  tp-resizeme rs-parallaxlevel-0"
-                                                 style="width:100%; text-align:center;font-weight:normal;font-weight:300;"
-                                                 data-y="480"
-                                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                 data-speed="3000"
-                                                 data-start="2200"
-                                                 
-                                                 data-easing="Back.easeOut"
-                                                 data-splitin="none"
-                                                 data-splitout="none"
-                                                 data-elementdelay="0.1"
-                                                 data-endelementdelay="0.1">
-                                                <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round" >
-                                                    立即體驗
-                                                </a>
-                                            </div>
-
-
-
-                                        </li>
-
-
-                            </ul>
-                            <div class="tp-bannertimer"></div>
+                        <div id="index_revslider">
+                                <div style="background-image:url(/images/2019121000531431231.png)">
+                                    <div class="sliderContent">
+                                        <img alt="" data-lazyload="/images/banner_Logo.png" src="/images/banner/dummy.png" />
+                                        <h2 class="f40">透過瑜珈喚醒療癒自己1</h2>
+                                        <h2  class="f40">享受與身體對話的快樂1</h2>
+                                        <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round">
+                                            立即體驗
+                                        </a>
+                                    </div>
+                                </div>
+                                <div style="background-image:url(/images/2019121000531431231.png)">
+                                    <div class="sliderContent">
+                                        <img alt="" data-lazyload="/images/banner_Logo.png" src="/images/banner/dummy.png" />
+                                        <h2 class="f40">透過瑜珈喚醒療癒自己2</h2>
+                                        <h2  class="f40">享受與身體對話的快樂2</h2>
+                                        <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round">
+                                            立即體驗
+                                        </a>
+                                    </div>
+                                </div>
                         </div>
+                        
                     </div>
-
+                    
                     
                     <div class="container">
                         <div class="row">
@@ -636,7 +525,7 @@
                                     <div class="main-content ">
                                         <div class="caroufredsel " data-scroll-fx="scroll" data-speed="3000" data-easing="swing" data-scroll-item="1" data-visible-min="1" data-visible-max="4" data-responsive="1" data-infinite="1" data-autoplay="1">
                                             <div class="caroufredsel-wrap">
-                                                <ul class="caroufredsel-items row">
+                                                <ul class="caroufredsel-items row three_img_slide">
                                                     <li class="caroufredsel-item col-md-4 col-sm-6">
                                                         <a href="/Course/List">
                                                             <div class="team-member1 team-member-below">
@@ -745,7 +634,7 @@
                                         <div class="caroufredsel " data-scroll-fx="scroll" data-speed="3000" data-easing="swing" data-scroll-item="1" data-visible-min="1" data-visible-max="5" data-responsive="1" data-infinite="1" data-autoplay="1">
 
                                             <div class="caroufredsel-wrap">
-                                                <ul class="caroufredsel-items row">
+                                                <ul class="caroufredsel-items row three_img_slide">
 
                                                     <li class="caroufredsel-item col-md-3 col-sm-6">
                                                         <a href="/Author/Detail/1">
@@ -866,68 +755,36 @@
                             </div>
 
                             
-                            <div id="revslider" style="height: 100%; max-height: none;" class="revslider-initialised tp-simpleresponsive">
+                            <div style="height: 100%; max-height: none;">
 
-                                <ul class="tp-revslider-mainul" style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;">
+                                <ul id="env" class="tp-revslider-mainul" style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;">
     
-                                            <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="off" data-title="Intro" class="tp-revslider-slidesli active-revslide current-sr-slide-visible" style="width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1;">
-    
-                                                <div class="aaa zzzzzz tp-caption  start" style="background-image: url(&quot;/Content/images/adv/2020010316452674166.jpg&quot;); transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 9px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 5px; backface-visibility: visible; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);" data-speed="800" data-easing="Power3.easeInOut">
-                                                </div>
-    
-                                                
-    
-                                    
-    
-                                                        <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0 start" style="width: 100%; text-align: center; color: rgb(102, 102, 102); font-weight: 200; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 15px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 15px; top: 398.359px; backface-visibility: visible; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);" data-y="330" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1">
-                                                            敦南頂級瑜珈會館
-    
-    
-                                                        </div>
-                                                        <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0 start" style="width: 100%; text-align: center; color: rgb(102, 102, 102); font-weight: 200; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 15px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 15px; top: 417.333px; backface-visibility: visible; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);" data-y="380" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1">
-                                                            透過瑜珈，帶您體驗最美好的當下
-    
-                                                        </div>
-    
-                                                <div class="tp-caption blackmontserrat40  tp-resizeme rs-parallaxlevel-0 start" style="width: 100%; text-align: center; font-weight: 300; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 15px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 15px; top: 436.308px; backface-visibility: visible; visibility: visible; opacity: 0.672086; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00214, 0, 0, 0, 1);" data-y="430" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="3000" data-start="2200" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1">
-                                                    <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round" style="transition: all 0.2s ease-out 0s; min-height: 0px; min-width: 75.8974px; line-height: 18px; border-width: 0px; margin: 3.79487px 0px 0px; padding: 0px 11px; letter-spacing: 0px; font-size: 6px;">
-                                                        立即體驗
-                                                    </a>
-                                                </div>
-    
-    
-    
-                                            </li>
-                                            <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="off" data-title="Intro" class="tp-revslider-slidesli active-revslide" style="width: 100%; height: 100%; overflow: hidden; visibility: hidden; opacity: 0; z-index: 18;">
-    
-                                                <div class="aaa zzzzzz tp-caption  start" style="background-image: url(&quot;/Content/images/adv/2019121716450361478.jpg&quot;); transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 9px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 5px; backface-visibility: visible; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 0, 0, 1);" data-speed="800" data-easing="Power3.easeInOut">
-                                                </div>
-    
-                                                
-    
-                                    
-    
-                                                        <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0 start" style="width: 100%; text-align: center; color: rgb(102, 102, 102); font-weight: 200; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 15px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 15px; top: 398.359px; backface-visibility: visible; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 0, 0, 1);" data-y="330" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1">
-                                                            透過瑜珈喚醒療癒自己
-    
-    
-                                                        </div>
-                                                        <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0 start" style="width: 100%; text-align: center; color: rgb(102, 102, 102); font-weight: 200; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 15px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 15px; top: 417.333px; backface-visibility: visible; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 0, 0, 1);" data-y="380" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="800" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1">
-                                                            享受與身體對話的快樂
-    
-                                                        </div>
-    
-                                                <div class="tp-caption blackmontserrat40  tp-resizeme rs-parallaxlevel-0 start" style="width: 100%; text-align: center; font-weight: 300; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 15px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 15px; top: 436.308px; backface-visibility: visible; visibility: visible; opacity: -0.00416967; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 0, 0, 1);" data-y="430" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="3000" data-start="2200" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1">
-                                                    <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round" style="transition: all 0.2s ease-out 0s; min-height: 0px; min-width: 75.8974px; line-height: 18px; border-width: 0px; margin: 3.79487px 0px 0px; padding: 0px 11px; letter-spacing: 0px; font-size: 6px;">
-                                                        立即體驗
-                                                    </a>
-                                                </div>
-    
-    
-    
-                                            </li>
-    
-    
+                                    <li style="background-image: url(&quot;/Content/images/adv/2020010316452674166.jpg&quot;); transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 9px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 5px; backface-visibility: visible; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);">
+                                        <div class="sliderContent">
+                                            <h2>
+                                                敦南頂級瑜珈會館
+                                            </h2>
+                                            <h2>
+                                                透過瑜珈，帶您體驗最美好的當下
+                                            </h2>
+                                            <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round">
+                                                立即體驗
+                                            </a>
+                                        </div>
+                                    </li style="background-image: url(&quot;/Content/images/adv/2020010316452674166.jpg&quot;); transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 9px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 5px; backface-visibility: visible; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);">
+                                    <li style="background-image: url(&quot;/Content/images/adv/2019121716450361478.jpg&quot;); transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 9px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 5px; backface-visibility: visible; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 0, 0, 1);">
+                                        <div class="sliderContent">
+                                            <h2>
+                                                透過瑜珈喚醒療癒自己
+                                            </h2>
+                                            <h2>
+                                                享受與身體對話的快樂
+                                            </h2>
+                                            <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round" style="transition: all 0.2s ease-out 0s; min-height: 0px; min-width: 75.8974px; line-height: 18px; border-width: 0px; margin: 3.79487px 0px 0px; padding: 0px 11px; letter-spacing: 0px; font-size: 6px;">
+                                                立即體驗
+                                            </a>
+                                        </div>
+                                    </li>
                                 </ul>
                                 <div class="tp-bannertimer" style="width: 17.6%; visibility: visible; backface-visibility: visible; transform: translate3d(0px, 0px, 0px);"></div>
                             <div class="tp-loader spinner3" style="display: none;"><div class="dot1"></div><div class="dot2"></div><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
@@ -1136,7 +993,7 @@
     <div class="sitesao-preview__loading">
         <div class="sitesao-preview__loading__animation"><i></i><i></i><i></i><i></i></div>
     </div>
-
+    
     <script type='text/javascript' src='/js/libs/jquery.js'></script>
     <script type='text/javascript' src='/js/libs/jquery-migrate.min.js'></script>
     <script type='text/javascript' src='/js/libs/jquery.themepunch.tools.min.js'></script>
@@ -1154,124 +1011,35 @@
     <script type='text/javascript' src='/js/libs/isotope.pkgd.min.js'></script>
     <script type='text/javascript' src='/js/libs/jquery.magnific-popup.min.js'></script>
     <script type='text/javascript' src='/js/libs/jquery.countTo.min.js'></script>
+    
 
     <script type='text/javascript' src='/js/skin-selector.js'></script>
 
     <script type='text/javascript' src='/js/script.js'></script>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="/js/libs/slick.js" type="text/javascript" charset="utf-8"></script>
+
     <script type="text/javascript">
-        /******************************************
-           -  PREPARE PLACEHOLDER FOR SLIDER   -
-        ******************************************/
+        $(function(){
+            $('#index_revslider, #env').slick({
+                slidesToShow: 1,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
 
-        var setREVStartSize = function () {
-            var tpopt = new Object();
-            tpopt.startwidth = 1170;
-            tpopt.startheight = 500;
-            tpopt.container = jQuery('#revslider');
-            tpopt.fullScreen = "on";
-            tpopt.forceFullWidth = "on";
+            $('.three_img_slide').slick({
+                slidesToShow: 1,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                slidesToShow: 3,
+                arrows: false,
+            });
 
-            tpopt.container.closest(".rev_slider_wrapper").css({ height: tpopt.container.height() }); tpopt.width = parseInt(tpopt.container.width(), 0); tpopt.height = parseInt(tpopt.container.height(), 0); tpopt.bw = tpopt.width / tpopt.startwidth; tpopt.bh = tpopt.height / tpopt.startheight; if (tpopt.bh > tpopt.bw) tpopt.bh = tpopt.bw; if (tpopt.bh < tpopt.bw) tpopt.bw = tpopt.bh; if (tpopt.bw < tpopt.bh) tpopt.bh = tpopt.bw; if (tpopt.bh > 1) { tpopt.bw = 1; tpopt.bh = 1 } if (tpopt.bw > 1) { tpopt.bw = 1; tpopt.bh = 1 } tpopt.height = Math.round(tpopt.startheight * (tpopt.width / tpopt.startwidth)); if (tpopt.height > tpopt.startheight && tpopt.autoHeight != "on") tpopt.height = tpopt.startheight; if (tpopt.fullScreen == "on") { tpopt.height = tpopt.bw * tpopt.startheight; var cow = tpopt.container.parent().width(); var coh = jQuery(window).height(); if (tpopt.fullScreenOffsetContainer != undefined) { try { var offcontainers = tpopt.fullScreenOffsetContainer.split(","); jQuery.each(offcontainers, function (e, t) { coh = coh - jQuery(t).outerHeight(true); if (coh < tpopt.minFullScreenHeight) coh = tpopt.minFullScreenHeight }) } catch (e) { } } tpopt.container.parent().height(coh); tpopt.container.height(coh); tpopt.container.closest(".rev_slider_wrapper").height(coh); tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(coh); tpopt.container.css({ height: "100%" }); tpopt.height = coh; } else { tpopt.container.height(tpopt.height); tpopt.container.closest(".rev_slider_wrapper").height(tpopt.height); tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(tpopt.height); }
-        };
-
-        /* CALL PLACEHOLDER */
-        setREVStartSize();
-
-
-        var tpj = jQuery;
-        tpj.noConflict();
-        var revapi9;
-
-        tpj(document).ready(function () {
-
-            if (tpj('#revslider').revolution == undefined) {
-
-                revslider_showDoubleJqueryError('#revslider');
-            } else {
-
-                revapi9 = tpj('#revslider').show().revolution(
-                    {
-                        dottedOverlay: "none",
-                        delay: 100000,
-                        startwidth: 1170,
-                        startheight: 500,
-                        hideThumbs: 200,
-
-                        thumbWidth: 100,
-                        thumbHeight: 50,
-                        thumbAmount: 2,
-
-
-                        simplifyAll: "off",
-
-                        navigationType: "bullet",
-                        navigationArrows: "solo",
-                        navigationStyle: "preview5",
-
-                        touchenabled: "on",
-                        onHoverStop: "off",
-                        nextSlideOnWindowFocus: "off",
-
-                        swipe_threshold: 0.7,
-                        swipe_min_touches: 1,
-                        drag_block_vertical: false,
-
-                        parallax: "mouse",
-                        parallaxBgFreeze: "on",
-                        parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
-
-
-                        keyboardNavigation: "off",
-
-                        navigationHAlign: "center",
-                        navigationVAlign: "bottom",
-                        navigationHOffset: 0,
-                        navigationVOffset: 20,
-
-                        soloArrowLeftHalign: "left",
-                        soloArrowLeftValign: "center",
-                        soloArrowLeftHOffset: 20,
-                        soloArrowLeftVOffset: 0,
-
-                        soloArrowRightHalign: "right",
-                        soloArrowRightValign: "center",
-                        soloArrowRightHOffset: 20,
-                        soloArrowRightVOffset: 0,
-
-                        shadow: 0,
-                        fullWidth: "off",
-                        fullScreen: "on",
-
-                        spinner: "spinner3",
-
-                        stopLoop: "off",
-                        stopAfterLoops: -1,
-                        stopAtSlide: -1,
-
-                        shuffle: "off",
-
-
-                        //forceFullWidth: "on",
-                        fullScreenAlignForce: "off",
-                        minFullScreenHeight: "400",
-
-                        hideThumbsOnMobile: "off",
-                        hideNavDelayOnMobile: 1500,
-                        hideBulletsOnMobile: "off",
-                        hideArrowsOnMobile: "off",
-                        hideThumbsUnderResolution: 0,
-
-                        fullScreenOffsetContainer: ".headerwrap, .headertopwrap",
-                        fullScreenOffset: "",
-                        hideSliderAtLimit: 0,
-                        hideCaptionAtLimit: 0,
-                        hideAllCaptionAtLilmit: 0,
-                        startWithSlide: 0
-                    });
-
-
-
-            }
         });   /*ready*/
     </script>
 
