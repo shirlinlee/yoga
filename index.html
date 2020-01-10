@@ -279,9 +279,9 @@
 
                     <!--siler-->
                     <div class="row">
-                        <div id="index_revslider">
+                        <div id="index_revslider" style="opacity: 0;">
                                 <div class="bgImg slider" style="background-image:url(/images/2019121000531431231.png)">
-                                    <div class="sliderContent">
+                                    <div class="sliderContent hasAni">
                                         <img alt="" src="/images/banner_Logo.png" />
                                         <h2 class="f32">透過瑜珈喚醒療癒自己1</h2>
                                         <h2 class="f32">享受與身體對話的快樂1</h2>
@@ -291,7 +291,7 @@
                                     </div>
                                 </div>
                                 <div class="bgImg slider" style="background-image:url(/images/2019121000531431231.png)">
-                                    <div class="sliderContent">
+                                    <div class="sliderContent hasAni">
                                         <img alt="" src="/images/banner_Logo.png" />
                                         <h2 class="f32">透過瑜珈喚醒療癒自己2</h2>
                                         <h2 class="f32">享受與身體對話的快樂2</h2>
@@ -409,42 +409,25 @@
 
                     
                     <div class="row">
-                        <div class="column col-md-12">
-                            <div id="revslider" data-autorun="yes" data-duration="10000" class="carousel slide fade dhslider dhslider-custom " data-height="970">
-                                <div class="dhslider-loader">
-                                    <div class="fade-loading">
-                                        <i></i><i></i><i></i><i></i>
+                        <div id="for4D">
+                            <div class="slider bgImg" style="background-image:url(/images/4d/01.jpg);">
+                                <div class="sliderContent">
+                                    <h2 class="f40" style="color: white;">
+                                        4D 情境式瑜珈
+                                    </h2>
+                                    <div class="f32" style="color: white;">
+                                        全台唯一的4D情境式瑜珈設<br />
+                                        備，啟發五感， 探索身心靈
+                                    </div>
+                                    <div class="slider-buttons text-center">
+                                        <a href="/Home/FD" class="btn btinput3 btn-style-round">
+                                            立即體驗
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="carousel-inner dhslider-wrap">
-                                    <div class="item slider-item active">
-                                        <div class="slide-bg " style="background-image:url(/images/4d/01.jpg);"></div>
-                                        <div class="slider-overlay"></div>
-                                        <div class="slider-caption caption-align-right" style="top: 30%;">
-                                            <div class="slider-caption-wrap parallax-content">
-                                                <h2 class="slider-heading-text text-center" style="color: white;">
-                                                    4D 情境式瑜珈
-                                                </h2>
-                                                <div class="slider-caption-text  text-center" style="color: white;">
-
-                                                    全台唯一的4D情境式瑜珈設<br />
-                                                    備，啟發五感， 探索身心靈
-                                                </div>
-                                                <div class="slider-buttons text-center">
-
-                                                    
-                                                    <a href="/Home/FD" class="btn btinput3 btn-style-round">
-                                                        立即體驗
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                
                             </div>
                         </div>
+                           
                     </div>
 
                     <a href="/Home/Course">
@@ -569,7 +552,6 @@
 
                                                             </div>
                                                         </a>
-
                                                     </li>
                                                     <li class="slider">
                                                         <a href="/Course/List">
@@ -581,15 +563,12 @@
                                                                 <div class="class-name">
                                                                     <h4>火箭瑜珈</h4>
                                                                 </div>
-
                                                             </div>
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -634,7 +613,7 @@
                                         <div class="caroufredsel " data-scroll-fx="scroll" data-speed="3000" data-easing="swing" data-scroll-item="1" data-visible-min="1" data-visible-max="5" data-responsive="1" data-infinite="1" data-autoplay="1">
 
                                             <div class="caroufredsel-wrap">
-                                                <ul class="caroufredsel-items row three_img_slide">
+                                                <ul class="caroufredsel-items row four_img_slide">
 
                                                     <li class="slider">
                                                         <a href="/Author/Detail/1">
@@ -760,7 +739,7 @@
                                 <div id="env" class="tp-revslider-mainul" style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;">
     
                                     <div class="bgImg slider" style="background-image: url(/images/Kit_8.jpg)">
-                                        <div class="sliderContent">
+                                        <div class="sliderContent hasAni">
                                             <h2 class="f32">
                                                 敦南頂級瑜珈會館
                                             </h2>
@@ -773,7 +752,7 @@
                                         </div>
                                     </div>
                                     <div class="bgImg slider" style="background-image: url(/images/Kit_7.jpg)">
-                                        <div class="sliderContent">
+                                        <div class="sliderContent hasAni">
                                             <h2 class="f32">
                                                 透過瑜珈喚醒療癒自己
                                             </h2>
@@ -1022,35 +1001,80 @@
 
     <script type="text/javascript">
         $(function(){
-            $('#index_revslider, #env').slick({
-                slidesToShow: 1,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear'
-            });
+            let loaded = false;
+            
+            // 異步載入
+            setTimeout(function(){
+                $('#index_revslider, #env').slick({
+                    slidesToShow: 1,
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    // cssEase: 'linear',
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                });
 
-            $('.three_img_slide').slick({
-                slidesToShow: 1,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 3,
-                arrows: false,
-                responsive: [
-                    {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                    }
-                    },
-                    {
-                    breakpoint: 599,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                    }
-                ]
-            });
+                // kv banner 第一次載入
+                $('#index_revslider').find('.slick-current .hasAni').addClass('first').find('>*').css({ opacity: 0});
+                $('#index_revslider').animate({opacity: 1}, 200, function(){
+                    $(this).find('.slick-current .hasAni').removeClass('first').find('*').css({ opacity: 1});
+                });
+
+                $('.three_img_slide').slick({
+                    slidesToShow: 1,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 3,
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    responsive: [
+                        {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                        },
+                        {
+                        breakpoint: 599,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                        }
+                    ]
+                });
+
+                $('.four_img_slide').slick({
+                    slidesToShow: 1,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 4,
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    responsive: [
+                        {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                        },
+                        {
+                        breakpoint: 599,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                        }
+                    ]
+                });
+
+
+            },2000)
+
+            
+
+            
 
         });   /*ready*/
     </script>

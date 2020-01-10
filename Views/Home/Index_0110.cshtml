@@ -65,7 +65,9 @@
 
                     <!--siler-->
                     <div class="row">
-                        <div id="index_revslider">
+                        <div id="revslider">
+
+                            <ul>
 
                                 @if (Adv != null)
                                 {
@@ -210,6 +212,8 @@
                                     }
                                 }*@
 
+
+                            </ul>
                             <div class="tp-bannertimer"></div>
                         </div>
                     </div>
@@ -286,25 +290,41 @@
 
                     @*情境式瑜珈*@
                     <div class="row">
-                        <div id="for4D">
-                            <div class="slider bgImg" style="background-image:url(/images/4d/01.jpg);">
-                                <div class="sliderContent">
-                                    <h2 class="f40" style="color: white;">
-                                        4D 情境式瑜珈
-                                    </h2>
-                                    <div class="f32" style="color: white;">
-                                        全台唯一的4D情境式瑜珈設<br />
-                                        備，啟發五感， 探索身心靈
-                                    </div>
-                                    <div class="slider-buttons text-center">
-                                        <a href="@(Url.Action("FD", "Home"))" class="btn btinput3 btn-style-round">
-                                            立即體驗
-                                        </a>
+                        <div class="column col-md-12">
+                            <div id="revslider" data-autorun="yes" data-duration="10000" class="carousel slide fade dhslider dhslider-custom " data-height="970">
+                                <div class="dhslider-loader">
+                                    <div class="fade-loading">
+                                        <i></i><i></i><i></i><i></i>
                                     </div>
                                 </div>
+                                <div class="carousel-inner dhslider-wrap">
+                                    <div class="item slider-item active">
+                                        <div class="slide-bg " style="background-image:url(/images/4d/01.jpg);"></div>
+                                        <div class="slider-overlay"></div>
+                                        <div class="slider-caption caption-align-right" style="top: 30%;">
+                                            <div class="slider-caption-wrap parallax-content">
+                                                <h2 class="slider-heading-text text-center" style="color: white;">
+                                                    4D 情境式瑜珈
+                                                </h2>
+                                                <div class="slider-caption-text  text-center" style="color: white;">
+
+                                                    全台唯一的4D情境式瑜珈設<br />
+                                                    備，啟發五感， 探索身心靈
+                                                </div>
+                                                <div class="slider-buttons text-center">
+
+                                                    <a href="@(Url.Action("FD", "Home"))" class="btn btinput3 btn-style-round">
+                                                        立即體驗
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
-                           
                     </div>
 
                     <a href="@(Url.Action("Course", "Home"))">
@@ -394,13 +414,13 @@
                                         <div class="caroufredsel " data-scroll-fx="scroll" data-speed="3000" data-easing="swing" data-scroll-item="1" data-visible-min="1" data-visible-max="@(Course.Count())" data-responsive="1" data-infinite="1" data-autoplay="1">
 
                                             <div class="caroufredsel-wrap">
-                                                <ul class="caroufredsel-items row three_img_slide">
+                                                <ul class="caroufredsel-items row">
 
                                                     @if (Course != null)
                                                     {
                                                         foreach (var item in Course)
                                                         {
-                                                            <li class="slider">
+                                                            <li class="caroufredsel-item col-md-4 col-sm-6">
                                                                 <a href="@(item.URL)">
                                                                     <div class="team-member1 team-member-below">
                                                                         <div class="member-avatar">
@@ -467,13 +487,13 @@
                                         <div class="caroufredsel " data-scroll-fx="scroll" data-speed="3000" data-easing="swing" data-scroll-item="1" data-visible-min="1" data-visible-max="@(Author.Count())" data-responsive="1" data-infinite="1" data-autoplay="1">
 
                                             <div class="caroufredsel-wrap">
-                                                <ul class="caroufredsel-items row four_img_slide">
+                                                <ul class="caroufredsel-items row">
 
                                                     @if (Author != null)
                                                     {
                                                         foreach (var item in Author)
                                                         {
-                                                            <li class="slider">
+                                                            <li class="caroufredsel-item col-md-3 col-sm-6">
                                                                 <a href="@(item.URL)">
                                                                     <div class="team-member team-member-below">
                                                                         <div class="member-avatar">
@@ -533,26 +553,46 @@
                                 </div>
                             </div>
 
-                            <div id="env">
-                                @if (SD != null)
-                                {
-                                    var ids = SD.Select(m => m.id).ToArray();
+                            <div id="revslider" data-autorun="yes" data-duration="10000" class="carousel slide fade dhslider dhslider-custom " data-height="970">
+                                <div class="dhslider-loader">
+                                    <div class="fade-loading">
+                                        <i></i><i></i><i></i><i></i>
+                                    </div>
+                                </div>
+                                <div class="carousel-inner dhslider-wrap">
 
-                                    foreach (var item in SD)
+                                    @if (SD != null)
                                     {
-                                        var i = Array.IndexOf(ids, item.id);
-                                        <div class="bgImg slider @(i == 0 ? "active" : "")" style="background-image:url(@(item.img[0]));">
+                                        var ids = SD.Select(m => m.id).ToArray();
 
-                                            <a href="@(item.img[0])" data-rel="magnific-popup" title="">
-                                                <div class="sliderContent hasAni">
-                                                        @Html.Raw(item.info)
-                                                </div>
-                                            </a>
-                                        </div>
+                                        foreach (var item in SD)
+                                        {
+                                            var i = Array.IndexOf(ids, item.id);
 
+
+                                            <div class="item slider-item @(i == 0 ? "active" : "") ">
+
+                                                <a href="@(item.img[0])" data-rel="magnific-popup" title="">
+
+                                                    <div class="slide-bg " style="background-image:url(@(item.img[0]));"></div>
+                                                    <div class="slider-overlay"></div>
+                                                    <div class="slider-caption caption-align-center" style="top: 30%;">
+                                                        <div class="slider-caption-wrap parallax-content">
+
+                                                            @Html.Raw(item.info)
+
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+
+
+                                        }
                                     }
-                                }
 
+
+                                </div>
                             </div>
                         </div>
                     </div>
