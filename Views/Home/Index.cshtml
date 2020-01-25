@@ -65,153 +65,49 @@
 
                     <!--siler-->
                     <div class="row">
-                        <div id="index_revslider">
+                        <div id="index_revslider" style="opacity: 0;">
 
-                                @if (Adv != null)
+                            @if (Adv != null)
+                            {
+                                foreach (var item in Adv)
                                 {
-                                    foreach (var item in Adv)
-                                    {
-                                        int y = 200;
-
-                                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="off" data-title="Intro">
-
-                                            <div class="aaa zzzzzz tp-caption " style="background-image:url(@(item.img[0]))"
-                                                 data-speed="800"
-                                                 data-easing="Power3.easeInOut">
-                                            </div>
+                                    <div class="bgImg slider" style="background-image:url(@(item.img[0]))">
+                                        <div class="sliderContent hasAni">
 
                                             @switch (item.group_id)
                                             {
                                                 case 4: //Logo
-                                                    <div class="tp-caption  customout " data-customout="" data-speed="800" data-start="1400" data-y="100" style="width:100%; text-align:center;">
-                                                        <img alt="" data-lazyload="/images/banner_Logo.png" src="/images/banner/dummy.png" />
-                                                    </div>
-
-                                                    y = y + 60;
-
+                                                    <img alt="" src="~/images/banner_Logo.png" />
                                                     break;
-
                                             }
 
                                             @{ var B = (item.title ?? "").Split(new string[] { "\n" }, StringSplitOptions.None); }
-                                            @if (B.Count() > 0)
+                                            @foreach (var item2 in B)
                                             {
-                                                //y = y + (item.group_id == 1 ? 60 : 0); 
-
-                                                foreach (var item2 in B)
-                                                {
-                                                 
-                                                    <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0"
-                                                         style="width:100%;text-align:center;color:#666666;font-weight:200;"
-                                                         data-y="@(y)"
-                                                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                         data-speed="800"
-                                                         data-start="1800"
-                                                         @*data-transition="slideleft"*@
-                                                         data-easing="Power3.easeInOut"
-                                                         data-splitin="none"
-                                                         data-splitout="none"
-                                                         data-elementdelay="0.1"
-                                                         data-endelementdelay="0.1">
-                                                        @(item2)
-                                                    </div>
-
-                                                    y = y + 60;
-                                                }
+                                                <h2 class="f32">@(item2)</h2>
                                             }
 
-                                            <div class="tp-caption blackmontserrat40  tp-resizeme rs-parallaxlevel-0"
-                                                 style="width:100%; text-align:center;font-weight:normal;font-weight:300;"
-                                                 data-y="@(y + 30)"
-                                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                 data-speed="3000"
-                                                 data-start="2200"
-                                                 @*data-transition="slideleft"*@
-                                                 data-easing="Back.easeOut"
-                                                 data-splitin="none"
-                                                 data-splitout="none"
-                                                 data-elementdelay="0.1"
-                                                 data-endelementdelay="0.1">
-                                                <a href="@(item.url)" class="btn btinput3 btn-style-round">
-                                                    立即體驗
-                                                </a>
-                                            </div>
-
-
-                                        </li>
-                                    }
+                                            <a href="@(item.url)" class="btn btinput3 btn-style-round">
+                                                立即體驗
+                                            </a>
+                                        </div>
+                                    </div>
                                 }
+                            }
 
 
-
-
-                                @*@if (Adv != null)
-                                {
-                                    foreach (var item in Adv)
-                                    {
-
-                                        var y = 330;
-                                        y = string.IsNullOrWhiteSpace(item.cont) ? 330 : 330;
-
-                                        <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="off" data-title="Intro">
-
-                                            <div class="aaa zzzzzz tp-caption " style="background-image:url(@(item.img[0]))"
-                                                 data-speed="800"
-                                                 data-easing="Power3.easeInOut">
-                                            </div>
-
-                                            @Html.Raw(item.cont)
-
-
-                                            @{ var B = (item.title ?? "").Split(new string[] { "\n" }, StringSplitOptions.None); }
-                                            @if (B.Count() > 0)
-                                            {
-                                                foreach (var item2 in B)
-                                                {
-                                                    <div class="tp-caption blackmontserrat40 tp-resizeme rs-parallaxlevel-0"
-                                                         style="width:100%;text-align:center;color:#666666;font-weight:200;"
-                                                         data-y="@(y)"
-                                                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                         data-speed="800"
-                                                         data-start="1800"
-                                                         data-easing="Power3.easeInOut"
-                                                         data-splitin="none"
-                                                         data-splitout="none"
-                                                         data-elementdelay="0.1"
-                                                         data-endelementdelay="0.1">
-                                                        @(item2)
-
-                                                    </div>
-
-                                                    y += 50;
-                                                }
-
-                                            }
-
-                                            <div class="tp-caption blackmontserrat40  tp-resizeme rs-parallaxlevel-0"
-                                                 style="width:100%; text-align:center;font-weight:normal;font-weight:300;"
-                                                 data-y="@(y)"
-                                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                                 data-speed="3000"
-                                                 data-start="2200"
-                                                 data-easing="Back.easeOut"
-                                                 data-splitin="none"
-                                                 data-splitout="none"
-                                                 data-elementdelay="0.1"
-                                                 data-endelementdelay="0.1">
-                                                <a href="@(item.url)" class="btn btinput3 btn-style-round">
-                                                    立即體驗
-                                                </a>
-                                            </div>
-
-
-
-                                        </li>
-                                    }
-                                }*@
-
-                            <div class="tp-bannertimer"></div>
+                            @*<div class="bgImg slider" style="background-image:url(/images/2019121000531431231.png)">
+                                    <div class="sliderContent hasAni">
+                                        <img alt="" src="/images/banner_Logo.png" />
+                                        <h2 class="f32">透過瑜珈喚醒療癒自己2</h2>
+                                        <h2 class="f32">享受與身體對話的快樂2</h2>
+                                        <a href="http://www.truespa.com.tw/Home/Contact" class="btn btinput3 btn-style-round">
+                                            立即體驗
+                                        </a>
+                                    </div>
+                                </div>*@
                         </div>
+
                     </div>
 
                     @*最新消息*@
@@ -227,6 +123,7 @@
                             </div>
                         </div>
                     </div>
+
 
                     <div class="row section-background-bottom1 section-welcome">
                         <div class="column col-md-12">
@@ -251,8 +148,8 @@
                                                         <h4>@(item.title)</h4>
                                                         <div class="text-block text-right">
 
-                                                            <p class="date">                                                             
-                                                                @(NW.getDate(item.start_date, "MM/dd/yyyy"))                                                            
+                                                            <p class="date">
+                                                                @(NW.getDate(item.start_date, "MM/dd/yyyy"))
                                                             </p>
 
                                                         </div>
@@ -261,10 +158,10 @@
                                             </div>
                                         }
                                     }
-                                   
+
                                 </div>
                             </div>
-                            
+
                             <div class="container">
                                 <div class="row">
                                     <div class="column col-md-12 text-center">
@@ -284,7 +181,7 @@
                         </div>
                     </div>
 
-                    @*情境式瑜珈*@
+                    @*4F瑜珈*@
                     <div class="row">
                         <div id="for4D">
                             <div class="slider bgImg" style="background-image:url(/images/4d/01.jpg);">
@@ -304,8 +201,9 @@
                                 </div>
                             </div>
                         </div>
-                           
+
                     </div>
+
 
                     <a href="@(Url.Action("Course", "Home"))">
                         <div class="row section-newsletters yaimg t_center" style="background-image:url(/images/class/pg01.jpg);background-position: center top;">
@@ -373,7 +271,6 @@
                         </div>
                     </a>
 
-
                     <div class="row section-team">
                         <div class="column col-md-12">
                             <div class="container">
@@ -392,7 +289,6 @@
                                 <div class="col-md-12 main-wrap">
                                     <div class="main-content ">
                                         <div class="caroufredsel " data-scroll-fx="scroll" data-speed="3000" data-easing="swing" data-scroll-item="1" data-visible-min="1" data-visible-max="@(Course.Count())" data-responsive="1" data-infinite="1" data-autoplay="1">
-
                                             <div class="caroufredsel-wrap">
                                                 <ul class="caroufredsel-items row three_img_slide">
 
@@ -419,10 +315,8 @@
                                                     }
 
                                                 </ul>
-
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -527,7 +421,7 @@
                                 <div class="row">
                                     <div class="column col-md-12">
                                         <h2 class="text-center">會館環境</h2>
-                                        <div class="text-block text-center">                               
+                                        <div class="text-block text-center">
                                         </div>
                                     </div>
                                 </div>
@@ -545,7 +439,7 @@
 
                                             <a href="@(item.img[0])" data-rel="magnific-popup" title="">
                                                 <div class="sliderContent hasAni">
-                                                        @Html.Raw(item.info)
+                                                    @Html.Raw(item.info)
                                                 </div>
                                             </a>
                                         </div>
@@ -599,44 +493,44 @@
                                     <div class="column col-md-3 col-sm-4">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
-                                                    <div class="icon_wrap">
-                                                        <img src="~/images/yoga_icon/icon-1.png" />
-                                                    </div>
-                                                    @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
-                                                    <span class="footer-contact-icon-text">選擇你的興趣課程</span>
+                                                <div class="icon_wrap">
+                                                    <img src="~/images/yoga_icon/icon-1.png" />
+                                                </div>
+                                                @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
+                                                <span class="footer-contact-icon-text">選擇你的興趣課程</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="column col-md-3 col-sm-4">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
-                                                    <div class="icon_wrap">
-                                                        <img src="~/images/yoga_icon/icon-2.png" />
-                                                    </div>
-                                                    @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
-                                                    <span class="footer-contact-icon-text">填寫你的聯絡資料</span>
+                                                <div class="icon_wrap">
+                                                    <img src="~/images/yoga_icon/icon-2.png" />
+                                                </div>
+                                                @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
+                                                <span class="footer-contact-icon-text">填寫你的聯絡資料</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="column col-md-3 col-sm-4">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
-                                                    <div class="icon_wrap">
-                                                        <img src="~/images/yoga_icon/icon-3.png" />
-                                                    </div>
-                                                    @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
-                                                    <span class="footer-contact-icon-text">專屬人員服務</span>
+                                                <div class="icon_wrap">
+                                                    <img src="~/images/yoga_icon/icon-3.png" />
+                                                </div>
+                                                @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
+                                                <span class="footer-contact-icon-text">專屬人員服務</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="column col-md-3 col-sm-4">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
-                                                    <div class="icon_wrap">
-                                                        <img src="~/images/yoga_icon/icon-4.png" />
-                                                    </div>
-                                                    @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
-                                                    <span class="footer-contact-icon-text">展開你的瑜珈旅程</span>
+                                                <div class="icon_wrap">
+                                                    <img src="~/images/yoga_icon/icon-4.png" />
+                                                </div>
+                                                @*<span class="footer-contact-icon-link">Yoga Edition 瑜珈館</span>*@
+                                                <span class="footer-contact-icon-text">展開你的瑜珈旅程</span>
                                             </div>
                                         </div>
                                     </div>
@@ -745,5 +639,87 @@
 </div>
 
 
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="/js/libs/slick.js" type="text/javascript" charset="utf-8"></script>
 
+
+<script type="text/javascript">
+    $(function () {
+        let loaded = false;
+
+        // 異步載入
+        setTimeout(function () {
+            $('#index_revslider, #env').slick({
+                slidesToShow: 1,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                // cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 5000,
+            });
+
+            // kv banner 第一次載入
+            $('#index_revslider').find('.slick-current .hasAni').addClass('first').find('>*').css({ opacity: 0 });
+            $('#index_revslider').animate({ opacity: 1 }, 200, function () {
+                $(this).find('.slick-current .hasAni').removeClass('first').find('*').css({ opacity: 1 });
+            });
+
+            $('.three_img_slide').slick({
+                slidesToShow: 1,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 599,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+
+            $('.four_img_slide').slick({
+                slidesToShow: 1,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 4,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 599,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    }
+                ]
+            });
+
+
+        }, 2000)
+
+
+
+
+
+    });   /*ready*/
+</script>
 

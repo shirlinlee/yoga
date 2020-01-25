@@ -20337,10 +20337,11 @@ a.go-to-top:hover a.go-to-top:focus {
 .posts .posts-wrap.posts-layout-grid .hentry {
     border-bottom: none;
     padding-bottom: 0;
+    display: inline-block;
 }
 
     .posts .posts-wrap.posts-layout-grid .hentry:nth-of-type(n) {
-        clear: none;
+        /* clear: none; */
     }
 
     .posts .posts-wrap.posts-layout-grid .hentry.col-md-6:nth-of-type(2n + 1) {
@@ -20376,9 +20377,9 @@ a.go-to-top:hover a.go-to-top:focus {
 }
 
 @media (max-width: 767px) {
-    .posts .posts-wrap.posts-layout-grid .hentry {
+    /* .posts .posts-wrap.posts-layout-grid .hentry {
         clear: none !important;
-    }
+    } */
 }
 
 .posts .posts-wrap.posts-layout-masonry .hentry {
@@ -20816,6 +20817,7 @@ a.go-to-top:hover a.go-to-top:focus {
 .entry-header {
     margin-bottom: 1.0952380952380951em;
     position: relative;
+    padding: 0 15px;
 }
 
 .date-badge {
@@ -20853,6 +20855,10 @@ a.go-to-top:hover a.go-to-top:focus {
 
 .entry-featured {
     margin-bottom: 1em;
+}
+
+.entry-featured.class-line {
+    position: relative;
 }
 
     .entry-featured img {
@@ -24159,11 +24165,14 @@ img.grayscale {
     color: #C8B39A;
     background-color: #ffffff;
     background-image: none;
-    border: 2px solid #C8B39A;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
+    border: 1px solid #C8B39A;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
     outline: none;
     float: right;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
 }
 
 .class-control {
@@ -24220,7 +24229,6 @@ img.grayscale {
 
 .class-mask {
     position: absolute;
-    border: solid 2px #A880A2;
     top: 0;
     left: 0px;
     width: 100%;
@@ -24238,28 +24246,48 @@ img.grayscale {
 }
 
 .class-caption-text {
-    margin-top: 70px;
     background: rgba(218, 218, 218, 0.6);
-    height: calc(100% - 70px);
+    height: 100%;
     margin-bottom: 0;
     font-size: 14px;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
     color: #5a5a5a;
-    margin-top: 70px;
     text-align: left;
     padding: 30px 20px;
 }
 
 @media (max-width: 767px) {
     .class-caption-text {
-        margin-top: 20px;
         padding: 15px 20px;
+        position: relative;
+        width: calc(100% - 30px);
+        margin: 20px auto 40px;
+    }
+    .class-caption-text:after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid #ccc;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
     }
     .hentry .btn {
         width: 100%;
         background-color: #c8b39a;
         color: #fff;
+    }
+    .class-mask {
+        position: relative;
+        opacity: 1;
+    }
+    .class-fix.text-right {
+        position: relative;
+        width: calc(100% - 30px);
+        right: 0;
+        margin: 0 auto;
+        bottom: inherit;
     }
 }
 
@@ -24309,6 +24337,18 @@ img.grayscale {
 
 .login-class h2 {
     margin: 0 0 10px;
+}
+
+.class-wrap {
+    border: 1px solid #e5e5e5;
+    border-bottom-width: 3px;
+    float: left;
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    -webkit-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 }
 
 
@@ -24362,17 +24402,6 @@ img.grayscale {
         margin: 5px;
     }
 
-    .class-wrap {
-        border: 1px solid #e5e5e5;
-        border-bottom-width: 3px;
-        float: left;
-        position: relative;
-        width: 100%;
-        background: #ffffff;
-        -webkit-transition: box-shadow 0.3s;
-        -o-transition: box-shadow 0.3s;
-        transition: box-shadow 0.3s;
-    }
 
     .team-member2 {
         position: relative;
@@ -24823,6 +24852,9 @@ img.grayscale {
     }
     .tag_wrap span:hover {
         background-color: #b59e83;
+    }
+    .class-wrap.class-list:hover {
+        border: 1px solid #a67fa3;
     }
 }
 
