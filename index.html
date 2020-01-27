@@ -813,7 +813,7 @@
                         <div class="column col-md-12">
                             <div class="container">
                                 <div class="row">
-                                    <div class="column col-md-3 col-sm-4">
+                                    <div class="column col-sm-3 col-xs-6">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
                                                 <div style="height:40px">
@@ -824,7 +824,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-md-3 col-sm-4">
+                                    <div class="column col-sm-3 col-xs-6">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
                                                 <div style="height:40px">
@@ -835,7 +835,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-md-3 col-sm-4">
+                                    <div class="column col-sm-3 col-xs-6">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
                                                 <div style="height:40px">
@@ -846,7 +846,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="column col-md-3 col-sm-4">
+                                    <div class="column col-sm-3 col-xs-6">
                                         <div class="raw-html">
                                             <div class="footer-contact-icon">
                                                 <div style="height:40px">
@@ -864,48 +864,61 @@
                     </div>
 
 
-                    <div class="row">
-                        <div class="column col-md-12">
-                            <div class="container-full">
-                                <div class="row">
-                                    <div class="column col-md-12">
-                                        <div data-autorun="yes" data-duration="10000" class="carousel slide fade dhslider dhslider-custom " data-height="850">
-                                            <div class="dhslider-loader">
-                                                <div class="fade-loading">
-                                                    <i></i><i></i><i></i><i></i>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-inner dhslider-wrap">
-                                                <div class="item slider-item active">
-                                                    <div class="slide-bg " style="background-image:url(images/services/free_02.png);"></div>
-                                                    <div class="slider-overlay"></div>
-                                                    <div class="slider-caption caption-align-right" style="text-align:right;">
-                                                        <div class="slider-caption-wrap parallax-content">
-                                                            <h2 class="slider-heading-text f_gold">即刻加入，免費體驗!!</h2>
+                    <div class="W100" id="contact">
+                        <div class="container">
+                            <h2 class="text-center">即刻加入，免費體驗!</h2>
+                            <form method="post" class="row">
+                                <input name="__RequestVerificationToken" type="hidden" value="CB6OOgX42mEUx2zr7bW8CZmSbDrp4-x1VdABLIIhIox51A_48KUncbCRJbKjujZofI6Z76wJe72x8FjeTNavMtYva_sLZ0-OVizjueXYkw41">
 
-                                                            <div class="top_50">
-                                                                <a href="/Home/Contact" class="btn btinput3 btn-style-round top_50">
-                                                                    立即預約體驗
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                <div class="column col-md-6 col-sm-6 col-xs-12">
 
-                                            </div>
-
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="form-control-wrap">
+                                                <input type="text" name="title" class="form-control" placeholder="請輸入姓名" required="">
+                                            </span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <span class="form-control-wrap">
+                                                <input type="text" name="tel" size="40" class="form-control" placeholder="請輸入電話" required="">
+                                            </span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <span class="form-control-wrap">
+                                                <input type="email" name="mail" size="40" class="form-control" placeholder="請輸入信箱" required="">
+                                            </span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <span class="form-control-wrap">
+                                                <select class="form-control" id="time_id" name="time_id" required="required"><option class="" value="">請選擇方便聯繫您的時間</option><option class="" value="1"> 9：00 - 12：00 </option><option class="" value="2"> 12：00 - 17：00 </option><option class="" value="3"> 17：00 - 21：00 </option></select>
+                                            </span>
                                         </div>
                                     </div>
+
                                 </div>
-                            </div>
-                        </div>
-
+                                <div class="column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="text-block">
+                                        <p><strong>服務協議</strong></p>
+                                        <p>
+                                            1. 為能加速與您聯繫，須請您留下您正確的姓名、E-mail、聯絡電話。<br>
+                                            2. 您所留下的各項資料，將僅供本公司、本公司之關係企業使用。除此之外，本公司並不會將您所留的資料提供給他人。<br>
+                                            3. 您可自由選擇提供個人資料的程度，但如果您提供的資料有誤或不足時，本公司可能無法提供您完整的服務。本公司已履行上開告知義務，您同意並瞭解本公司蒐集、處理或利用個人資料之目的及用途。如您已參加本公司之行銷活動或於客服中心留下聯繫方式者，視為同意本蒐集、處理及利用個人資料告知事項。</p>
+                                        <p>
+                                            <strong>
+                                                <input type="radio" required="" name="ra" value="0">
+                                                我同意服務協議
+                                            </strong>
+                                        </p>
+                                        <p></p>
+                                        
+                                    </div>
+                                    <div class="W100" style="top:25px">
+                                        <input type="submit" value="送出" class="btn btinput btn-style-round">
+                                    </div>
+                                </div>
+                            </form>
+                        </div class="container">
                     </div>
-
-
-
-                    
-
 
                 </div>
 
