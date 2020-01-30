@@ -195,6 +195,10 @@ website:   	http://www.themepunch.com
     .mb{
         display: inline-block;
     }
+
+    .W50 {
+        width: 100%;
+    }
 }
 
 /*************************

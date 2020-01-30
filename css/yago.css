@@ -189,7 +189,7 @@ button.slick-prev {
 
 /* signUp */
 
-h4.f40.t_left {
+#contact h4.f40.t_left {
   width: 100%;
   /* max-width: calc(100% - 150px); */
   display: inline-block;
@@ -197,36 +197,37 @@ h4.f40.t_left {
   margin-top: 0;
 }
 
-form {
+
+#contact {
+  background-image: url(https://www.yogaedition.com.tw/images/services/free_02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  position: relative;
+  text-align: center;
+
+}
+
+#contact h4,
+#contact form {
+  text-align: left;
+}
+
+#contact form {
   padding: 20px 0;
   position: relative;
   display: inline-block;
 }
 
-#contact {
-  background-image: url(https://www.yogaedition.com.tw/images/services/free_02.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center bottom;
-  padding: 100px 0 200px;
-  position: relative;
+#contact .W1200 {
+  display: inline-block;
 }
 
-#contact h2,
-#contact form {
-  position: relative;
-  z-index: 2;
-}
-
-#contact:before {
-  content: "";
-  display: block;
-  background-color: rgba(255, 255, 255, 0.4);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
+#contact div.W50 {
+  float: right;
+  padding-left: 50px;
+  padding-right: 20px;
 }
 
 @media (min-width: 1200px) {
@@ -826,7 +827,6 @@ tr:hover .delete {
 @media (max-width: 767px) {
   #contact {
     padding: 30px 0 50px;
-    background-size: 140%;
   }
 }
 @media (max-width: 599px) {
@@ -840,10 +840,31 @@ tr:hover .delete {
     font-size: 16px !important;
     min-width: 160px;
   }
+  #contact:before {
+    content: "";
+    display: block;
+    background-color: rgba(255, 255, 255, .85);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+  }
   #contact form {
     padding-top: 0;
+    position: relative;
+    z-index: 2;
+
+  }
+  #contact h4{
+    position: relative;
+    z-index: 2;
+    text-align: center;
   }
   #contact .btn {
     width: 100%;
+  }
+  #contact div.W50 {
+    padding:  0 20px;
   }
 }

@@ -440,6 +440,7 @@ body {
     background: #ffffff;
     font-style: normal;
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 input,
