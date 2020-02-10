@@ -9310,14 +9310,16 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 991px) {
-    .navbar-brand .logo {
+    .navbar-brand .logo-mobile {
         display: block;
         max-width: 200px;
     }
 
-    .navbar-brand .logo-fixed {
+    .navbar-brand .logo-fixed, .navbar-brand .logo {
         display: none;
     }
+
+ 
 }
 
 .navbar-fixed-top .navbar-brand img {
@@ -9332,9 +9334,9 @@ input[type="button"].btn-block {
     display: block;
 }
 
-.navbar-brand .logo-mobile {
+/* .navbar-brand .logo-mobile {
     display: none;
-}
+} */
 
 @media (max-width: 767px) {
     .navbar-brand .logo,
@@ -17900,6 +17902,10 @@ a[data-toggle="tooltip"] {
         border-width: 0 0 0px 0;
     }
 
+    .navbar-brand .logo-mobile {
+        display: none;
+    }
+
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a,
         .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a,
@@ -18011,12 +18017,12 @@ a[data-toggle="tooltip"] {
     overflow: hidden;
     position: relative;
 }
-
+/* 
 @media (max-width:991px) {
     .heading-mobile {
         display: none;
     }
-}
+} */
 
 .heading-container .heading-hero-background {
     background: url(../images/bg-1.jpg) no-repeat scroll 50% bottom;
